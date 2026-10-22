@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+octave-workspace
+*.jl.cov
+*.jl.mem
+.DS_Store
+Thumbs.db

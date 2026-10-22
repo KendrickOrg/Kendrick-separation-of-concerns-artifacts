@@ -1,0 +1,2203 @@
+{
+ "Model1": {
+  "compartments_compared": 4,
+  "compartments_only_in_kendrick": 0,
+  "max_relative_deviation": 0.00015903867826836518,
+  "worst_compartment": "E",
+  "worst_detail": {
+   "relative": 0.00015903867826836518,
+   "absolute": 0.40091371389001296,
+   "day": 1.0,
+   "peak": 2520.85667622
+  },
+  "compartments_with_zero_peak": [],
+  "aggregated_max_relative_deviation": 0.00015903867826836518,
+  "aggregated_worst_series": "E",
+  "unreachable_in_kendrick_max_value": {},
+  "population": {
+   "initial": 50000.0,
+   "kendrick_max_drift": 8.731149137020111e-11,
+   "matlab_max_drift": 9.899667929857969e-08
+  },
+  "per_compartment": {
+   "S": {
+    "relative": 3.6756807070148254e-06,
+    "absolute": 0.1834164672800398,
+    "day": 32.0,
+    "peak": 49900.0
+   },
+   "E": {
+    "relative": 0.00015903867826836518,
+    "absolute": 0.40091371389001296,
+    "day": 1.0,
+    "peak": 2520.85667622
+   },
+   "I": {
+    "relative": 4.8444890068908096e-05,
+    "absolute": 0.32115618404561985,
+    "day": 1.0,
+    "peak": 6629.30979075
+   },
+   "R": {
+    "relative": 4.085660479292537e-06,
+    "absolute": 0.15376320479481365,
+    "day": 35.0,
+    "peak": 37634.8464524
+   }
+  },
+  "aggregated": {
+   "S": {
+    "relative": 3.6756807070148254e-06,
+    "absolute": 0.1834164672800398,
+    "day": 32.0,
+    "peak": 49900.0
+   },
+   "E": {
+    "relative": 0.00015903867826836518,
+    "absolute": 0.40091371389001296,
+    "day": 1.0,
+    "peak": 2520.85667622
+   },
+   "I": {
+    "relative": 4.8444890068908096e-05,
+    "absolute": 0.32115618404561985,
+    "day": 1.0,
+    "peak": 6629.30979075
+   },
+   "R": {
+    "relative": 4.085660479292537e-06,
+    "absolute": 0.15376320479481365,
+    "day": 35.0,
+    "peak": 37634.8464524
+   }
+  }
+ },
+ "Model2": {
+  "compartments_compared": 8,
+  "compartments_only_in_kendrick": 0,
+  "max_relative_deviation": 0.00015903867826836518,
+  "worst_compartment": "E_birds",
+  "worst_detail": {
+   "relative": 0.00015903867826836518,
+   "absolute": 0.40091371389001296,
+   "day": 1.0,
+   "peak": 2520.85667622
+  },
+  "compartments_with_zero_peak": [],
+  "aggregated_max_relative_deviation": 0.00015903867826836518,
+  "aggregated_worst_series": "E_birds",
+  "unreachable_in_kendrick_max_value": {},
+  "population": {
+   "initial": 55000.0,
+   "kendrick_max_drift": 8.731149137020111e-11,
+   "matlab_max_drift": 9.906216291710734e-08
+  },
+  "per_compartment": {
+   "S_humans": {
+    "relative": 3.257681864852202e-07,
+    "absolute": 0.001628840932426101,
+    "day": 35.0,
+    "peak": 5000.0
+   },
+   "S_birds": {
+    "relative": 3.6756807070148254e-06,
+    "absolute": 0.1834164672800398,
+    "day": 32.0,
+    "peak": 49900.0
+   },
+   "E_humans": {
+    "relative": 4.599862494099326e-05,
+    "absolute": 0.0014332910324373893,
+    "day": 1.0,
+    "peak": 31.1594321412
+   },
+   "E_birds": {
+    "relative": 0.00015903867826836518,
+    "absolute": 0.40091371389001296,
+    "day": 1.0,
+    "peak": 2520.85667622
+   },
+   "I_humans": {
+    "relative": 1.5485247028656308e-05,
+    "absolute": 0.0009052017157477471,
+    "day": 1.0,
+    "peak": 58.4557491445
+   },
+   "I_birds": {
+    "relative": 4.8444890068908096e-05,
+    "absolute": 0.32115618404561985,
+    "day": 1.0,
+    "peak": 6629.30979075
+   },
+   "R_humans": {
+    "relative": 3.7838470374261244e-06,
+    "absolute": 0.00151287584333204,
+    "day": 42.0,
+    "peak": 399.824788996
+   },
+   "R_birds": {
+    "relative": 4.085660479292537e-06,
+    "absolute": 0.15376320479481365,
+    "day": 35.0,
+    "peak": 37634.8464524
+   }
+  },
+  "aggregated": {
+   "S_humans": {
+    "relative": 3.257681864852202e-07,
+    "absolute": 0.001628840932426101,
+    "day": 35.0,
+    "peak": 5000.0
+   },
+   "S_birds": {
+    "relative": 3.6756807070148254e-06,
+    "absolute": 0.1834164672800398,
+    "day": 32.0,
+    "peak": 49900.0
+   },
+   "E_humans": {
+    "relative": 4.599862494099326e-05,
+    "absolute": 0.0014332910324373893,
+    "day": 1.0,
+    "peak": 31.1594321412
+   },
+   "E_birds": {
+    "relative": 0.00015903867826836518,
+    "absolute": 0.40091371389001296,
+    "day": 1.0,
+    "peak": 2520.85667622
+   },
+   "I_humans": {
+    "relative": 1.5485247028656308e-05,
+    "absolute": 0.0009052017157477471,
+    "day": 1.0,
+    "peak": 58.4557491445
+   },
+   "I_birds": {
+    "relative": 4.8444890068908096e-05,
+    "absolute": 0.32115618404561985,
+    "day": 1.0,
+    "peak": 6629.30979075
+   },
+   "R_humans": {
+    "relative": 3.7838470374261244e-06,
+    "absolute": 0.00151287584333204,
+    "day": 42.0,
+    "peak": 399.824788996
+   },
+   "R_birds": {
+    "relative": 4.085660479292537e-06,
+    "absolute": 0.15376320479481365,
+    "day": 35.0,
+    "peak": 37634.8464524
+   }
+  }
+ },
+ "Model3": {
+  "compartments_compared": 120,
+  "compartments_only_in_kendrick": 0,
+  "max_relative_deviation": 0.00025475948245044084,
+  "worst_compartment": "E_birds_1",
+  "worst_detail": {
+   "relative": 0.00025475948245044084,
+   "absolute": 0.6172833874055179,
+   "day": 1.0,
+   "peak": 2423.00455892
+  },
+  "compartments_with_zero_peak": [],
+  "aggregated_max_relative_deviation": 7.189900258583157e-05,
+  "aggregated_worst_series": "E_birds",
+  "unreachable_in_kendrick_max_value": {},
+  "population": {
+   "initial": 825000.0,
+   "kendrick_max_drift": 2.3283064365386963e-10,
+   "matlab_max_drift": 5.525071173906326e-07
+  },
+  "per_compartment": {
+   "S_humans_1": {
+    "relative": 4.729257230792427e-06,
+    "absolute": 0.023646286153962137,
+    "day": 73.0,
+    "peak": 5000.0
+   },
+   "S_humans_2": {
+    "relative": 2.296369874420634e-06,
+    "absolute": 0.01148184937210317,
+    "day": 74.0,
+    "peak": 5000.0
+   },
+   "S_humans_3": {
+    "relative": 1.4008624961206805e-06,
+    "absolute": 0.007004312480603403,
+    "day": 103.0,
+    "peak": 5000.0
+   },
+   "S_humans_4": {
+    "relative": 1.7108358586483519e-06,
+    "absolute": 0.00855417929324176,
+    "day": 111.0,
+    "peak": 5000.0
+   },
+   "S_humans_5": {
+    "relative": 1.5848102168092738e-06,
+    "absolute": 0.007924051084046368,
+    "day": 125.0,
+    "peak": 5000.0
+   },
+   "S_humans_6": {
+    "relative": 1.339983384059451e-06,
+    "absolute": 0.006699916920297255,
+    "day": 146.0,
+    "peak": 5000.0
+   },
+   "S_humans_7": {
+    "relative": 1.1137280815091798e-06,
+    "absolute": 0.0055686404075458995,
+    "day": 172.0,
+    "peak": 5000.0
+   },
+   "S_humans_8": {
+    "relative": 1.2092686283722288e-06,
+    "absolute": 0.0060463431418611435,
+    "day": 50.0,
+    "peak": 5000.0
+   },
+   "S_humans_9": {
+    "relative": 1.6832672208693111e-06,
+    "absolute": 0.008416336104346556,
+    "day": 53.0,
+    "peak": 5000.0
+   },
+   "S_humans_10": {
+    "relative": 2.228024806390749e-06,
+    "absolute": 0.011140124031953746,
+    "day": 56.0,
+    "peak": 5000.0
+   },
+   "S_humans_11": {
+    "relative": 2.8383652888805954e-06,
+    "absolute": 0.014191826444402977,
+    "day": 59.0,
+    "peak": 5000.0
+   },
+   "S_humans_12": {
+    "relative": 3.508956383120676e-06,
+    "absolute": 0.01754478191560338,
+    "day": 62.0,
+    "peak": 5000.0
+   },
+   "S_humans_13": {
+    "relative": 4.2344484043496775e-06,
+    "absolute": 0.02117224202174839,
+    "day": 65.0,
+    "peak": 5000.0
+   },
+   "S_humans_14": {
+    "relative": 5.009651291584305e-06,
+    "absolute": 0.025048256457921525,
+    "day": 68.0,
+    "peak": 5000.0
+   },
+   "S_humans_15": {
+    "relative": 5.829655227717012e-06,
+    "absolute": 0.02914827613858506,
+    "day": 71.0,
+    "peak": 5000.0
+   },
+   "S_birds_1": {
+    "relative": 6.094901758059019e-05,
+    "absolute": 3.0413559772714507,
+    "day": 69.0,
+    "peak": 49900.0
+   },
+   "S_birds_2": {
+    "relative": 3.595463520010526e-05,
+    "absolute": 1.797731760005263,
+    "day": 72.0,
+    "peak": 50000.0
+   },
+   "S_birds_3": {
+    "relative": 1.8743540410359857e-05,
+    "absolute": 0.9371770205179928,
+    "day": 75.0,
+    "peak": 50000.0
+   },
+   "S_birds_4": {
+    "relative": 9.744243996756268e-06,
+    "absolute": 0.4872121998378134,
+    "day": 79.0,
+    "peak": 50000.0
+   },
+   "S_birds_5": {
+    "relative": 5.235111770161894e-06,
+    "absolute": 0.26175558850809466,
+    "day": 83.0,
+    "peak": 50000.0
+   },
+   "S_birds_6": {
+    "relative": 5.02929559268523e-06,
+    "absolute": 0.2514647796342615,
+    "day": 41.0,
+    "peak": 50000.0
+   },
+   "S_birds_7": {
+    "relative": 8.407267730945023e-06,
+    "absolute": 0.42036338654725114,
+    "day": 43.0,
+    "peak": 50000.0
+   },
+   "S_birds_8": {
+    "relative": 1.2892996002046858e-05,
+    "absolute": 0.6446498001023429,
+    "day": 46.0,
+    "peak": 50000.0
+   },
+   "S_birds_9": {
+    "relative": 1.846854093586444e-05,
+    "absolute": 0.923427046793222,
+    "day": 48.0,
+    "peak": 50000.0
+   },
+   "S_birds_10": {
+    "relative": 2.516151979798451e-05,
+    "absolute": 1.2580759898992255,
+    "day": 51.0,
+    "peak": 50000.0
+   },
+   "S_birds_11": {
+    "relative": 3.2834127635287584e-05,
+    "absolute": 1.6417063817643793,
+    "day": 54.0,
+    "peak": 50000.0
+   },
+   "S_birds_12": {
+    "relative": 4.140729759659735e-05,
+    "absolute": 2.0703648798298673,
+    "day": 57.0,
+    "peak": 50000.0
+   },
+   "S_birds_13": {
+    "relative": 5.079983724150225e-05,
+    "absolute": 2.5399918620751123,
+    "day": 60.0,
+    "peak": 50000.0
+   },
+   "S_birds_14": {
+    "relative": 6.0931152472330724e-05,
+    "absolute": 3.046557623616536,
+    "day": 63.0,
+    "peak": 50000.0
+   },
+   "S_birds_15": {
+    "relative": 7.1722395823017e-05,
+    "absolute": 3.58611979115085,
+    "day": 66.0,
+    "peak": 50000.0
+   },
+   "E_humans_1": {
+    "relative": 0.00011694540587921479,
+    "absolute": 0.003431093941109964,
+    "day": 67.0,
+    "peak": 29.3392794297
+   },
+   "E_humans_2": {
+    "relative": 8.061713399925435e-05,
+    "absolute": 0.00230135762994621,
+    "day": 83.0,
+    "peak": 28.5467557054
+   },
+   "E_humans_3": {
+    "relative": 6.194505726356522e-05,
+    "absolute": 0.0016594689863715928,
+    "day": 86.0,
+    "peak": 26.7893688323
+   },
+   "E_humans_4": {
+    "relative": 3.461722441350841e-05,
+    "absolute": 0.0010185359811529793,
+    "day": 88.0,
+    "peak": 29.4228089747
+   },
+   "E_humans_5": {
+    "relative": 1.868376072986424e-05,
+    "absolute": 0.0005724608031716372,
+    "day": 92.0,
+    "peak": 30.6394848151
+   },
+   "E_humans_6": {
+    "relative": 1.949669999450187e-05,
+    "absolute": 0.0006019113113993058,
+    "day": 41.0,
+    "peak": 30.8724713192
+   },
+   "E_humans_7": {
+    "relative": 2.8489203700720636e-05,
+    "absolute": 0.0008735542906315175,
+    "day": 43.0,
+    "peak": 30.6626432879
+   },
+   "E_humans_8": {
+    "relative": 3.923266894676884e-05,
+    "absolute": 0.0011859859252254523,
+    "day": 46.0,
+    "peak": 30.2295499405
+   },
+   "E_humans_9": {
+    "relative": 5.2440489205269494e-05,
+    "absolute": 0.0015592633062873062,
+    "day": 48.0,
+    "peak": 29.7339580526
+   },
+   "E_humans_10": {
+    "relative": 6.715132044501111e-05,
+    "absolute": 0.0019705775807139503,
+    "day": 51.0,
+    "peak": 29.3453288432
+   },
+   "E_humans_11": {
+    "relative": 8.351242953323992e-05,
+    "absolute": 0.0024206894171001636,
+    "day": 54.0,
+    "peak": 28.9859776638
+   },
+   "E_humans_12": {
+    "relative": 0.00010146765535747369,
+    "absolute": 0.0029122267943151314,
+    "day": 56.0,
+    "peak": 28.7010356557
+   },
+   "E_humans_13": {
+    "relative": 0.00012111704158263413,
+    "absolute": 0.0034509717035078324,
+    "day": 59.0,
+    "peak": 28.4928665563
+   },
+   "E_humans_14": {
+    "relative": 0.00014192778563491853,
+    "absolute": 0.004023429676209389,
+    "day": 62.0,
+    "peak": 28.3484284505
+   },
+   "E_humans_15": {
+    "relative": 0.00016376764729913944,
+    "absolute": 0.00462671586218022,
+    "day": 65.0,
+    "peak": 28.2517086768
+   },
+   "E_birds_1": {
+    "relative": 0.00025475948245044084,
+    "absolute": 0.6172833874055179,
+    "day": 1.0,
+    "peak": 2423.00455892
+   },
+   "E_birds_2": {
+    "relative": 0.0001108352221787537,
+    "absolute": 0.25488257711782936,
+    "day": 1.0,
+    "peak": 2299.65323394
+   },
+   "E_birds_3": {
+    "relative": 5.873811959537325e-05,
+    "absolute": 0.13742572141450182,
+    "day": 81.0,
+    "peak": 2339.63433561
+   },
+   "E_birds_4": {
+    "relative": 4.196409528704382e-05,
+    "absolute": 0.10319245674463673,
+    "day": 39.0,
+    "peak": 2459.06544723
+   },
+   "E_birds_5": {
+    "relative": 6.0287711220192665e-05,
+    "absolute": 0.15054951848742348,
+    "day": 40.0,
+    "peak": 2497.18417635
+   },
+   "E_birds_6": {
+    "relative": 7.636764702466099e-05,
+    "absolute": 0.1905725489255019,
+    "day": 42.0,
+    "peak": 2495.46183954
+   },
+   "E_birds_7": {
+    "relative": 8.987858441819539e-05,
+    "absolute": 0.22264620685928094,
+    "day": 44.0,
+    "peak": 2477.18862397
+   },
+   "E_birds_8": {
+    "relative": 0.00010218056151386928,
+    "absolute": 0.25000853281608215,
+    "day": 46.0,
+    "peak": 2446.73281407
+   },
+   "E_birds_9": {
+    "relative": 0.00011369898493508113,
+    "absolute": 0.27527245358123764,
+    "day": 48.0,
+    "peak": 2421.06342232
+   },
+   "E_birds_10": {
+    "relative": 0.0001269277995112922,
+    "absolute": 0.3035392504680203,
+    "day": 51.0,
+    "peak": 2391.43238626
+   },
+   "E_birds_11": {
+    "relative": 0.0001413503820757924,
+    "absolute": 0.335439864172713,
+    "day": 53.0,
+    "peak": 2373.10900223
+   },
+   "E_birds_12": {
+    "relative": 0.00015748364099362147,
+    "absolute": 0.3714339340276638,
+    "day": 56.0,
+    "peak": 2358.55566765
+   },
+   "E_birds_13": {
+    "relative": 0.00017616000174766367,
+    "absolute": 0.41341095588904864,
+    "day": 58.0,
+    "peak": 2346.79241478
+   },
+   "E_birds_14": {
+    "relative": 0.00019714630397373457,
+    "absolute": 0.4608540521840041,
+    "day": 61.0,
+    "peak": 2337.62461124
+   },
+   "E_birds_15": {
+    "relative": 0.00021941878201168924,
+    "absolute": 0.5113467663957181,
+    "day": 64.0,
+    "peak": 2330.46032663
+   },
+   "I_humans_1": {
+    "relative": 0.0001066454797847346,
+    "absolute": 0.005774677298283848,
+    "day": 70.0,
+    "peak": 54.1483549977
+   },
+   "I_humans_2": {
+    "relative": 7.13949787729103e-05,
+    "absolute": 0.0038987527092899654,
+    "day": 88.0,
+    "peak": 54.6082200219
+   },
+   "I_humans_3": {
+    "relative": 5.973387022729171e-05,
+    "absolute": 0.003039316819688054,
+    "day": 90.0,
+    "peak": 50.8809626452
+   },
+   "I_humans_4": {
+    "relative": 3.5588801187405426e-05,
+    "absolute": 0.001982855670281225,
+    "day": 92.0,
+    "peak": 55.7157196681
+   },
+   "I_humans_5": {
+    "relative": 2.0137112702223998e-05,
+    "absolute": 0.0011625096683207659,
+    "day": 96.0,
+    "peak": 57.729709592
+   },
+   "I_humans_6": {
+    "relative": 1.1142418881472881e-05,
+    "absolute": 0.0006442204542222996,
+    "day": 100.0,
+    "peak": 57.8169301545
+   },
+   "I_humans_7": {
+    "relative": 1.8127587427735257e-05,
+    "absolute": 0.0010335842855653254,
+    "day": 46.0,
+    "peak": 57.0172004237
+   },
+   "I_humans_8": {
+    "relative": 2.7539228850368833e-05,
+    "absolute": 0.0015391032276212968,
+    "day": 48.0,
+    "peak": 55.8876661356
+   },
+   "I_humans_9": {
+    "relative": 3.9208449005937175e-05,
+    "absolute": 0.002151167654332653,
+    "day": 51.0,
+    "peak": 54.864900522
+   },
+   "I_humans_10": {
+    "relative": 5.25916862125821e-05,
+    "absolute": 0.0028347700718782676,
+    "day": 54.0,
+    "peak": 53.9014866422
+   },
+   "I_humans_11": {
+    "relative": 6.783084519466273e-05,
+    "absolute": 0.0036091292225606253,
+    "day": 56.0,
+    "peak": 53.2077878759
+   },
+   "I_humans_12": {
+    "relative": 8.470104346730185e-05,
+    "absolute": 0.0044598571141634125,
+    "day": 59.0,
+    "peak": 52.6540988351
+   },
+   "I_humans_13": {
+    "relative": 0.00010288311844665823,
+    "absolute": 0.005374911609962396,
+    "day": 62.0,
+    "peak": 52.2428916533
+   },
+   "I_humans_14": {
+    "relative": 0.00012224288767747905,
+    "absolute": 0.00635043528235002,
+    "day": 65.0,
+    "peak": 51.9493232122
+   },
+   "I_humans_15": {
+    "relative": 0.00014266523565032913,
+    "absolute": 0.007382026491967508,
+    "day": 68.0,
+    "peak": 51.7436953601
+   },
+   "I_birds_1": {
+    "relative": 9.679177448378544e-05,
+    "absolute": 0.6060066555373851,
+    "day": 65.0,
+    "peak": 6260.93135258
+   },
+   "I_birds_2": {
+    "relative": 7.475959148521349e-05,
+    "absolute": 0.4597315725873159,
+    "day": 82.0,
+    "peak": 6149.46608795
+   },
+   "I_birds_3": {
+    "relative": 6.074295689817673e-05,
+    "absolute": 0.3495084349970057,
+    "day": 84.0,
+    "peak": 5753.89234974
+   },
+   "I_birds_4": {
+    "relative": 3.496515716847318e-05,
+    "absolute": 0.21945567559578194,
+    "day": 87.0,
+    "peak": 6276.41038587
+   },
+   "I_birds_5": {
+    "relative": 1.8967613076431178e-05,
+    "absolute": 0.12344314304323234,
+    "day": 90.0,
+    "peak": 6508.10107449
+   },
+   "I_birds_6": {
+    "relative": 2.0087150596840092e-05,
+    "absolute": 0.13176041948099737,
+    "day": 44.0,
+    "peak": 6559.4380271
+   },
+   "I_birds_7": {
+    "relative": 2.0176878975998894e-05,
+    "absolute": 0.13122450163791655,
+    "day": 47.0,
+    "peak": 6503.70663342
+   },
+   "I_birds_8": {
+    "relative": 1.894379299818214e-05,
+    "absolute": 0.12148990161404072,
+    "day": 50.0,
+    "peak": 6413.1772146
+   },
+   "I_birds_9": {
+    "relative": 2.5215877680703965e-05,
+    "absolute": 0.15936075911577063,
+    "day": 42.0,
+    "peak": 6319.85771559
+   },
+   "I_birds_10": {
+    "relative": 3.7637821910935896e-05,
+    "absolute": 0.23451281910047328,
+    "day": 46.0,
+    "peak": 6230.77551234
+   },
+   "I_birds_11": {
+    "relative": 5.2198057112893486e-05,
+    "absolute": 0.3217850552623531,
+    "day": 50.0,
+    "peak": 6164.69411048
+   },
+   "I_birds_12": {
+    "relative": 6.934801904943399e-05,
+    "absolute": 0.42369289971384205,
+    "day": 53.0,
+    "peak": 6109.66117737
+   },
+   "I_birds_13": {
+    "relative": 8.805618346222048e-05,
+    "absolute": 0.5343044656538041,
+    "day": 56.0,
+    "peak": 6067.76769837
+   },
+   "I_birds_14": {
+    "relative": 0.00010834713134011009,
+    "absolute": 0.6541276430011749,
+    "day": 60.0,
+    "peak": 6037.33236783
+   },
+   "I_birds_15": {
+    "relative": 0.00013057470475910784,
+    "absolute": 0.7854935294267307,
+    "day": 63.0,
+    "peak": 6015.66383685
+   },
+   "R_humans_1": {
+    "relative": 5.512454672837867e-05,
+    "absolute": 0.021694635149287933,
+    "day": 78.0,
+    "peak": 393.556708161
+   },
+   "R_humans_2": {
+    "relative": 3.0047344717168922e-05,
+    "absolute": 0.011780856516566018,
+    "day": 80.0,
+    "peak": 392.076458917
+   },
+   "R_humans_3": {
+    "relative": 1.226252872099974e-05,
+    "absolute": 0.005727445382035512,
+    "day": 110.0,
+    "peak": 467.068865839
+   },
+   "R_humans_4": {
+    "relative": 1.5492212994272895e-05,
+    "absolute": 0.007904853920422283,
+    "day": 116.0,
+    "peak": 510.246917167
+   },
+   "R_humans_5": {
+    "relative": 1.5060469424463449e-05,
+    "absolute": 0.007717565520010794,
+    "day": 128.0,
+    "peak": 512.438576946
+   },
+   "R_humans_6": {
+    "relative": 1.3635633346242797e-05,
+    "absolute": 0.006653399181971054,
+    "day": 147.0,
+    "peak": 487.942071558
+   },
+   "R_humans_7": {
+    "relative": 1.2278039808399632e-05,
+    "absolute": 0.005555261941367462,
+    "day": 173.0,
+    "peak": 452.455117271
+   },
+   "R_humans_8": {
+    "relative": 1.2569538312497743e-05,
+    "absolute": 0.005221938997124198,
+    "day": 56.0,
+    "peak": 415.443977917
+   },
+   "R_humans_9": {
+    "relative": 1.914732711934021e-05,
+    "absolute": 0.007294304541233032,
+    "day": 58.0,
+    "peak": 380.956803828
+   },
+   "R_humans_10": {
+    "relative": 2.543318764864312e-05,
+    "absolute": 0.009693493295316102,
+    "day": 61.0,
+    "peak": 381.135602396
+   },
+   "R_humans_11": {
+    "relative": 3.163584806747514e-05,
+    "absolute": 0.012372682914616462,
+    "day": 64.0,
+    "peak": 391.096925495
+   },
+   "R_humans_12": {
+    "relative": 3.839951019197397e-05,
+    "absolute": 0.015309561239291725,
+    "day": 67.0,
+    "peak": 398.691576084
+   },
+   "R_humans_13": {
+    "relative": 4.589147434083168e-05,
+    "absolute": 0.018481237799335304,
+    "day": 70.0,
+    "peak": 402.716148583
+   },
+   "R_humans_14": {
+    "relative": 5.427382032900962e-05,
+    "absolute": 0.021865309601082572,
+    "day": 73.0,
+    "peak": 402.870287526
+   },
+   "R_humans_15": {
+    "relative": 6.367320567690728e-05,
+    "absolute": 0.025440619568570355,
+    "day": 76.0,
+    "peak": 399.549846723
+   },
+   "R_birds_1": {
+    "relative": 7.480940233328563e-05,
+    "absolute": 2.7512666930379055,
+    "day": 73.0,
+    "peak": 36777.0174233
+   },
+   "R_birds_2": {
+    "relative": 5.453329031301533e-05,
+    "absolute": 2.010606812142214,
+    "day": 75.0,
+    "peak": 36869.3471566
+   },
+   "R_birds_3": {
+    "relative": 3.3629073812944295e-05,
+    "absolute": 1.2426881035971746,
+    "day": 79.0,
+    "peak": 36952.7900325
+   },
+   "R_birds_4": {
+    "relative": 1.9181563906184766e-05,
+    "absolute": 0.7081508905612282,
+    "day": 82.0,
+    "peak": 36918.3083311
+   },
+   "R_birds_5": {
+    "relative": 1.0649573527097241e-05,
+    "absolute": 0.39099608044489287,
+    "day": 86.0,
+    "peak": 36714.7172091
+   },
+   "R_birds_6": {
+    "relative": 5.954392317996466e-06,
+    "absolute": 0.2166686808122904,
+    "day": 89.0,
+    "peak": 36388.042514
+   },
+   "R_birds_7": {
+    "relative": 8.586633085648298e-06,
+    "absolute": 0.31301889412497985,
+    "day": 46.0,
+    "peak": 36454.2063231
+   },
+   "R_birds_8": {
+    "relative": 1.319979869301366e-05,
+    "absolute": 0.48868580831003783,
+    "day": 49.0,
+    "peak": 37022.2167531
+   },
+   "R_birds_9": {
+    "relative": 1.9038809837060167e-05,
+    "absolute": 0.7091221703321935,
+    "day": 52.0,
+    "peak": 37246.1396695
+   },
+   "R_birds_10": {
+    "relative": 2.6127068870922043e-05,
+    "absolute": 0.973705379954481,
+    "day": 55.0,
+    "peak": 37268.0680242
+   },
+   "R_birds_11": {
+    "relative": 3.4466058421160296e-05,
+    "absolute": 1.28185041879442,
+    "day": 57.0,
+    "peak": 37191.6742881
+   },
+   "R_birds_12": {
+    "relative": 4.394328871777508e-05,
+    "absolute": 1.6293819300572068,
+    "day": 60.0,
+    "peak": 37079.1986126
+   },
+   "R_birds_13": {
+    "relative": 5.447163229959985e-05,
+    "absolute": 2.013395709083852,
+    "day": 64.0,
+    "peak": 36962.2797057
+   },
+   "R_birds_14": {
+    "relative": 6.599679862145187e-05,
+    "absolute": 2.432745271049498,
+    "day": 67.0,
+    "peak": 36861.5648314
+   },
+   "R_birds_15": {
+    "relative": 7.839437206127667e-05,
+    "absolute": 2.8831891767767956,
+    "day": 70.0,
+    "peak": 36778.0122599
+   }
+  },
+  "aggregated": {
+   "S_humans": {
+    "relative": 1.8862269339539732e-06,
+    "absolute": 0.141467020046548,
+    "day": 69.0,
+    "peak": 75000.0
+   },
+   "S_birds": {
+    "relative": 1.9476941307725473e-05,
+    "absolute": 14.605758286663331,
+    "day": 64.0,
+    "peak": 749900.0
+   },
+   "E_humans": {
+    "relative": 3.9862944302187645e-05,
+    "absolute": 0.012740931379369158,
+    "day": 61.0,
+    "peak": 319.61842263291993
+   },
+   "E_birds": {
+    "relative": 7.189900258583157e-05,
+    "absolute": 1.7362052557327843,
+    "day": 49.0,
+    "peak": 24147.835064333995
+   },
+   "I_humans": {
+    "relative": 3.67030569730722e-05,
+    "absolute": 0.022937906269135055,
+    "day": 63.0,
+    "peak": 624.9590132496
+   },
+   "I_birds": {
+    "relative": 3.511649828192165e-05,
+    "absolute": 2.3591090071167855,
+    "day": 81.0,
+    "peak": 67179.50600249
+   },
+   "R_humans": {
+    "relative": 2.2499224215856045e-05,
+    "absolute": 0.13147500441937154,
+    "day": 75.0,
+    "peak": 5843.535010719
+   },
+   "R_birds": {
+    "relative": 2.425771976512459e-05,
+    "absolute": 13.271616790851112,
+    "day": 69.0,
+    "peak": 547108.9995000999
+   }
+  }
+ },
+ "Model4": {
+  "compartments_compared": 180,
+  "compartments_only_in_kendrick": 60,
+  "max_relative_deviation": 0.004241619493068504,
+  "worst_compartment": "E_birds_1_free",
+  "worst_detail": {
+   "relative": 0.004241619493068504,
+   "absolute": 0.8622498719878777,
+   "day": 1.0,
+   "peak": 203.283173655
+  },
+  "compartments_with_zero_peak": [],
+  "aggregated_max_relative_deviation": 0.00020441192735331007,
+  "aggregated_worst_series": "E_birds",
+  "unreachable_in_kendrick_max_value": {
+   "S_humans_1_isolated": 0.0,
+   "S_humans_2_isolated": 0.0,
+   "S_humans_3_isolated": 0.0,
+   "S_humans_4_isolated": 0.0,
+   "S_humans_5_isolated": 0.0,
+   "S_humans_6_isolated": 0.0,
+   "S_humans_7_isolated": 0.0,
+   "S_humans_8_isolated": 0.0,
+   "S_humans_9_isolated": 0.0,
+   "S_humans_10_isolated": 0.0,
+   "S_humans_11_isolated": 0.0,
+   "S_humans_12_isolated": 0.0,
+   "S_humans_13_isolated": 0.0,
+   "S_humans_14_isolated": 0.0,
+   "S_humans_15_isolated": 0.0,
+   "S_birds_1_isolated": 0.0,
+   "S_birds_2_isolated": 0.0,
+   "S_birds_3_isolated": 0.0,
+   "S_birds_4_isolated": 0.0,
+   "S_birds_5_isolated": 0.0,
+   "S_birds_6_isolated": 0.0,
+   "S_birds_7_isolated": 0.0,
+   "S_birds_8_isolated": 0.0,
+   "S_birds_9_isolated": 0.0,
+   "S_birds_10_isolated": 0.0,
+   "S_birds_11_isolated": 0.0,
+   "S_birds_12_isolated": 0.0,
+   "S_birds_13_isolated": 0.0,
+   "S_birds_14_isolated": 0.0,
+   "S_birds_15_isolated": 0.0,
+   "E_humans_1_isolated": 0.0,
+   "E_humans_2_isolated": 0.0,
+   "E_humans_3_isolated": 0.0,
+   "E_humans_4_isolated": 0.0,
+   "E_humans_5_isolated": 0.0,
+   "E_humans_6_isolated": 0.0,
+   "E_humans_7_isolated": 0.0,
+   "E_humans_8_isolated": 0.0,
+   "E_humans_9_isolated": 0.0,
+   "E_humans_10_isolated": 0.0,
+   "E_humans_11_isolated": 0.0,
+   "E_humans_12_isolated": 0.0,
+   "E_humans_13_isolated": 0.0,
+   "E_humans_14_isolated": 0.0,
+   "E_humans_15_isolated": 0.0,
+   "E_birds_1_isolated": 0.0,
+   "E_birds_2_isolated": 0.0,
+   "E_birds_3_isolated": 0.0,
+   "E_birds_4_isolated": 0.0,
+   "E_birds_5_isolated": 0.0,
+   "E_birds_6_isolated": 0.0,
+   "E_birds_7_isolated": 0.0,
+   "E_birds_8_isolated": 0.0,
+   "E_birds_9_isolated": 0.0,
+   "E_birds_10_isolated": 0.0,
+   "E_birds_11_isolated": 0.0,
+   "E_birds_12_isolated": 0.0,
+   "E_birds_13_isolated": 0.0,
+   "E_birds_14_isolated": 0.0,
+   "E_birds_15_isolated": 0.0
+  },
+  "population": {
+   "initial": 825000.0,
+   "kendrick_max_drift": 5.820766091346741e-10,
+   "matlab_max_drift": 3.473833203315735e-07
+  },
+  "per_compartment": {
+   "S_humans_1_free": {
+    "relative": 3.364263558978564e-07,
+    "absolute": 0.001682131779489282,
+    "day": 1.0,
+    "peak": 5000.0
+   },
+   "S_humans_2_free": {
+    "relative": 1.1100876326963772e-07,
+    "absolute": 0.0005550438163481886,
+    "day": 1.0,
+    "peak": 5000.0
+   },
+   "S_humans_3_free": {
+    "relative": 1.3551921074395068e-08,
+    "absolute": 6.775960537197534e-05,
+    "day": 1.0,
+    "peak": 5000.0
+   },
+   "S_humans_4_free": {
+    "relative": 4.0497290683561e-09,
+    "absolute": 2.0248645341780502e-05,
+    "day": 153.0,
+    "peak": 5000.0
+   },
+   "S_humans_5_free": {
+    "relative": 4.2241052142344415e-09,
+    "absolute": 2.1120526071172208e-05,
+    "day": 154.0,
+    "peak": 5000.0
+   },
+   "S_humans_6_free": {
+    "relative": 4.679216544900555e-09,
+    "absolute": 2.3396082724502776e-05,
+    "day": 155.0,
+    "peak": 5000.0
+   },
+   "S_humans_7_free": {
+    "relative": 5.401220369094517e-09,
+    "absolute": 2.7006101845472585e-05,
+    "day": 155.0,
+    "peak": 5000.0
+   },
+   "S_humans_8_free": {
+    "relative": 6.213745473360177e-09,
+    "absolute": 3.1068727366800886e-05,
+    "day": 156.0,
+    "peak": 5000.0
+   },
+   "S_humans_9_free": {
+    "relative": 6.8415243731578815e-09,
+    "absolute": 3.4207621865789406e-05,
+    "day": 158.0,
+    "peak": 5000.0
+   },
+   "S_humans_10_free": {
+    "relative": 7.067971637297887e-09,
+    "absolute": 3.533985818648944e-05,
+    "day": 162.0,
+    "peak": 5000.0
+   },
+   "S_humans_11_free": {
+    "relative": 6.82546178722987e-09,
+    "absolute": 3.412730893614935e-05,
+    "day": 164.0,
+    "peak": 5000.0
+   },
+   "S_humans_12_free": {
+    "relative": 6.2036007875576615e-09,
+    "absolute": 3.101800393778831e-05,
+    "day": 164.0,
+    "peak": 5000.0
+   },
+   "S_humans_13_free": {
+    "relative": 5.654078267980367e-09,
+    "absolute": 2.8270391339901835e-05,
+    "day": 143.0,
+    "peak": 5000.0
+   },
+   "S_humans_14_free": {
+    "relative": 5.285125007503666e-09,
+    "absolute": 2.642562503751833e-05,
+    "day": 141.0,
+    "peak": 5000.0
+   },
+   "S_humans_15_free": {
+    "relative": 4.9384336307412015e-09,
+    "absolute": 2.4692168153706007e-05,
+    "day": 143.0,
+    "peak": 5000.0
+   },
+   "S_birds_1_free": {
+    "relative": 7.137157039551725e-06,
+    "absolute": 0.35670548171765404,
+    "day": 1.0,
+    "peak": 49978.6511269
+   },
+   "S_birds_2_free": {
+    "relative": 2.776272152987076e-06,
+    "absolute": 0.1388136076493538,
+    "day": 1.0,
+    "peak": 50000.0
+   },
+   "S_birds_3_free": {
+    "relative": 4.303507496661041e-07,
+    "absolute": 0.021517537483305205,
+    "day": 1.0,
+    "peak": 50000.0
+   },
+   "S_birds_4_free": {
+    "relative": 9.706628683488816e-08,
+    "absolute": 0.004853314341744408,
+    "day": 149.0,
+    "peak": 50000.0
+   },
+   "S_birds_5_free": {
+    "relative": 9.336488670669497e-08,
+    "absolute": 0.004668244335334748,
+    "day": 152.0,
+    "peak": 50000.0
+   },
+   "S_birds_6_free": {
+    "relative": 8.922893073759042e-08,
+    "absolute": 0.004461446536879521,
+    "day": 156.0,
+    "peak": 50000.0
+   },
+   "S_birds_7_free": {
+    "relative": 8.536295747035183e-08,
+    "absolute": 0.0042681478735175915,
+    "day": 157.0,
+    "peak": 50000.0
+   },
+   "S_birds_8_free": {
+    "relative": 8.293204446090385e-08,
+    "absolute": 0.004146602223045193,
+    "day": 158.0,
+    "peak": 50000.0
+   },
+   "S_birds_9_free": {
+    "relative": 8.209415376768447e-08,
+    "absolute": 0.004104707688384224,
+    "day": 159.0,
+    "peak": 50000.0
+   },
+   "S_birds_10_free": {
+    "relative": 8.300087836687453e-08,
+    "absolute": 0.0041500439183437265,
+    "day": 110.0,
+    "peak": 50000.0
+   },
+   "S_birds_11_free": {
+    "relative": 9.163823182461783e-08,
+    "absolute": 0.004581911591230892,
+    "day": 116.0,
+    "peak": 50000.0
+   },
+   "S_birds_12_free": {
+    "relative": 9.785604022908956e-08,
+    "absolute": 0.004892802011454478,
+    "day": 122.0,
+    "peak": 50000.0
+   },
+   "S_birds_13_free": {
+    "relative": 1.0174768336582929e-07,
+    "absolute": 0.0050873841682914644,
+    "day": 126.0,
+    "peak": 50000.0
+   },
+   "S_birds_14_free": {
+    "relative": 1.0368871124228462e-07,
+    "absolute": 0.005184435562114231,
+    "day": 130.0,
+    "peak": 50000.0
+   },
+   "S_birds_15_free": {
+    "relative": 1.0418523408588953e-07,
+    "absolute": 0.005209261704294477,
+    "day": 134.0,
+    "peak": 50000.0
+   },
+   "E_humans_1_free": {
+    "relative": 0.0018685852288589722,
+    "absolute": 0.0029166779352698124,
+    "day": 1.0,
+    "peak": 1.56090174011
+   },
+   "E_humans_2_free": {
+    "relative": 0.0005538453322576684,
+    "absolute": 0.0008638152930888297,
+    "day": 1.0,
+    "peak": 1.55966881506
+   },
+   "E_humans_3_free": {
+    "relative": 6.229566880305078e-05,
+    "absolute": 9.673564553544696e-05,
+    "day": 1.0,
+    "peak": 1.55284705011
+   },
+   "E_humans_4_free": {
+    "relative": 3.4423119743282474e-06,
+    "absolute": 5.3114435563766685e-06,
+    "day": 1.0,
+    "peak": 1.54298727018
+   },
+   "E_humans_5_free": {
+    "relative": 5.465119972550946e-07,
+    "absolute": 8.375826979767353e-07,
+    "day": 189.0,
+    "peak": 1.53259709244
+   },
+   "E_humans_6_free": {
+    "relative": 5.356589348694314e-07,
+    "absolute": 8.163455060827829e-07,
+    "day": 193.0,
+    "peak": 1.52400240702
+   },
+   "E_humans_7_free": {
+    "relative": 5.528933904255366e-07,
+    "absolute": 8.398052581126692e-07,
+    "day": 80.0,
+    "peak": 1.51892801154
+   },
+   "E_humans_8_free": {
+    "relative": 6.218357540053112e-07,
+    "absolute": 9.440944190863831e-07,
+    "day": 89.0,
+    "peak": 1.5182375941
+   },
+   "E_humans_9_free": {
+    "relative": 6.653415092545621e-07,
+    "absolute": 1.0102368682707308e-06,
+    "day": 95.0,
+    "peak": 1.51837342811
+   },
+   "E_humans_10_free": {
+    "relative": 6.814323084939556e-07,
+    "absolute": 1.0311882034930164e-06,
+    "day": 101.0,
+    "peak": 1.51326579418
+   },
+   "E_humans_11_free": {
+    "relative": 6.790168663885279e-07,
+    "absolute": 1.014863897808027e-06,
+    "day": 105.0,
+    "peak": 1.49460778965
+   },
+   "E_humans_12_free": {
+    "relative": 6.688880948329995e-07,
+    "absolute": 9.740333724028716e-07,
+    "day": 108.0,
+    "peak": 1.45619780039
+   },
+   "E_humans_13_free": {
+    "relative": 6.181694958466967e-07,
+    "absolute": 9.212848335327095e-07,
+    "day": 112.0,
+    "peak": 1.4903434086
+   },
+   "E_humans_14_free": {
+    "relative": 5.646001025046836e-07,
+    "absolute": 8.64856659621438e-07,
+    "day": 115.0,
+    "peak": 1.5318039366
+   },
+   "E_humans_15_free": {
+    "relative": 5.208630108288012e-07,
+    "absolute": 8.089932843624581e-07,
+    "day": 117.0,
+    "peak": 1.55317860463
+   },
+   "E_birds_1_free": {
+    "relative": 0.004241619493068504,
+    "absolute": 0.8622498719878777,
+    "day": 1.0,
+    "peak": 203.283173655
+   },
+   "E_birds_2_free": {
+    "relative": 0.0016508736361539997,
+    "absolute": 0.33479293157971934,
+    "day": 1.0,
+    "peak": 202.797430553
+   },
+   "E_birds_3_free": {
+    "relative": 0.0002528883155369672,
+    "absolute": 0.05101430340151558,
+    "day": 1.0,
+    "peak": 201.726613162
+   },
+   "E_birds_4_free": {
+    "relative": 1.864439077958986e-05,
+    "absolute": 0.0037367213151299995,
+    "day": 1.0,
+    "peak": 200.420671252
+   },
+   "E_birds_5_free": {
+    "relative": 1.0865722219250523e-06,
+    "absolute": 0.00021641297601604492,
+    "day": 145.0,
+    "peak": 199.170355775
+   },
+   "E_birds_6_free": {
+    "relative": 1.0044713978883908e-06,
+    "absolute": 0.00019913667392756906,
+    "day": 150.0,
+    "peak": 198.25021832
+   },
+   "E_birds_7_free": {
+    "relative": 8.389213363131098e-07,
+    "absolute": 0.00016602402700982566,
+    "day": 155.0,
+    "peak": 197.901781518
+   },
+   "E_birds_8_free": {
+    "relative": 6.364330671865768e-07,
+    "absolute": 0.00012606233812562095,
+    "day": 160.0,
+    "peak": 198.076348677
+   },
+   "E_birds_9_free": {
+    "relative": 5.758033341437138e-07,
+    "absolute": 0.00011417866755891737,
+    "day": 102.0,
+    "peak": 198.294557861
+   },
+   "E_birds_10_free": {
+    "relative": 5.01438139540276e-07,
+    "absolute": 9.91127024292382e-05,
+    "day": 110.0,
+    "peak": 197.656888485
+   },
+   "E_birds_11_free": {
+    "relative": 3.8237272218416733e-07,
+    "absolute": 7.45354630851125e-05,
+    "day": 117.0,
+    "peak": 194.928818822
+   },
+   "E_birds_12_free": {
+    "relative": 3.5709282499270584e-07,
+    "absolute": 6.761141133893034e-05,
+    "day": 180.0,
+    "peak": 189.33847618
+   },
+   "E_birds_13_free": {
+    "relative": 3.930734221825812e-07,
+    "absolute": 7.734399332548492e-05,
+    "day": 184.0,
+    "peak": 196.767293235
+   },
+   "E_birds_14_free": {
+    "relative": 4.292105914923726e-07,
+    "absolute": 8.624665633760742e-05,
+    "day": 188.0,
+    "peak": 200.942516441
+   },
+   "E_birds_15_free": {
+    "relative": 5.971792234273924e-07,
+    "absolute": 0.00012113833986404643,
+    "day": 119.0,
+    "peak": 202.85089486
+   },
+   "I_humans_1_free": {
+    "relative": 0.0011576613025692224,
+    "absolute": 0.002002022840345584,
+    "day": 1.0,
+    "peak": 1.72936837044
+   },
+   "I_humans_1_isolated": {
+    "relative": 0.0002978955587487945,
+    "absolute": 0.0004085718168094672,
+    "day": 1.0,
+    "peak": 1.3715270497
+   },
+   "I_humans_2_free": {
+    "relative": 0.0002600415268999463,
+    "absolute": 0.00044930596443170214,
+    "day": 1.0,
+    "peak": 1.72782389716
+   },
+   "I_humans_2_isolated": {
+    "relative": 4.328103928650726e-05,
+    "absolute": 5.922664536066666e-05,
+    "day": 1.0,
+    "peak": 1.36842012893
+   },
+   "I_humans_3_free": {
+    "relative": 2.1374825494537648e-05,
+    "absolute": 3.676550967263331e-05,
+    "day": 1.0,
+    "peak": 1.72003788672
+   },
+   "I_humans_3_isolated": {
+    "relative": 1.8415190916006361e-06,
+    "absolute": 2.50574996148e-06,
+    "day": 1.0,
+    "peak": 1.36069724876
+   },
+   "I_humans_4_free": {
+    "relative": 7.56270445678274e-07,
+    "absolute": 1.29226991343e-06,
+    "day": 1.0,
+    "peak": 1.70874046555
+   },
+   "I_humans_4_isolated": {
+    "relative": 5.971873834870462e-07,
+    "absolute": 8.065081201769075e-07,
+    "day": 190.0,
+    "peak": 1.35051098278
+   },
+   "I_humans_5_free": {
+    "relative": 6.417857361909575e-07,
+    "absolute": 1.0890069157554194e-06,
+    "day": 187.0,
+    "peak": 1.69683876463
+   },
+   "I_humans_5_isolated": {
+    "relative": 6.028023346742409e-07,
+    "absolute": 8.079158408946796e-07,
+    "day": 194.0,
+    "peak": 1.34026660884
+   },
+   "I_humans_6_free": {
+    "relative": 6.401117983555221e-07,
+    "absolute": 1.0798797420719097e-06,
+    "day": 191.0,
+    "peak": 1.68701740047
+   },
+   "I_humans_6_isolated": {
+    "relative": 5.968449982791018e-07,
+    "absolute": 7.951689144913843e-07,
+    "day": 197.0,
+    "peak": 1.33228713784
+   },
+   "I_humans_7_free": {
+    "relative": 6.259239890223624e-07,
+    "absolute": 1.0523590117106352e-06,
+    "day": 195.0,
+    "peak": 1.68128883086
+   },
+   "I_humans_7_isolated": {
+    "relative": 5.804818622631644e-07,
+    "absolute": 7.71055087001038e-07,
+    "day": 202.0,
+    "peak": 1.32830177328
+   },
+   "I_humans_8_free": {
+    "relative": 6.356842677546522e-07,
+    "absolute": 1.0684425915119533e-06,
+    "day": 89.0,
+    "peak": 1.68077557635
+   },
+   "I_humans_8_isolated": {
+    "relative": 6.299586972389091e-07,
+    "absolute": 8.37407320708472e-07,
+    "day": 94.0,
+    "peak": 1.32930511854
+   },
+   "I_humans_9_free": {
+    "relative": 6.962740358895472e-07,
+    "absolute": 1.1709069297483055e-06,
+    "day": 95.0,
+    "peak": 1.68167541714
+   },
+   "I_humans_9_isolated": {
+    "relative": 6.840593750158161e-07,
+    "absolute": 9.112706594871511e-07,
+    "day": 100.0,
+    "peak": 1.33215140786
+   },
+   "I_humans_10_free": {
+    "relative": 7.361507106752897e-07,
+    "absolute": 1.2348525735284e-06,
+    "day": 101.0,
+    "peak": 1.67744533235
+   },
+   "I_humans_10_isolated": {
+    "relative": 7.143565966131904e-07,
+    "absolute": 9.512770194897158e-07,
+    "day": 105.0,
+    "peak": 1.33165568009
+   },
+   "I_humans_11_free": {
+    "relative": 7.613543151375781e-07,
+    "absolute": 1.2629591721324829e-06,
+    "day": 105.0,
+    "peak": 1.65883235574
+   },
+   "I_humans_11_isolated": {
+    "relative": 7.282166281018875e-07,
+    "absolute": 9.61184150716221e-07,
+    "day": 110.0,
+    "peak": 1.31991513737
+   },
+   "I_humans_12_free": {
+    "relative": 7.802883530250731e-07,
+    "absolute": 1.2631093297965634e-06,
+    "day": 109.0,
+    "peak": 1.61877250237
+   },
+   "I_humans_12_isolated": {
+    "relative": 7.355558538872411e-07,
+    "absolute": 9.497006669967334e-07,
+    "day": 113.0,
+    "peak": 1.29113331364
+   },
+   "I_humans_13_free": {
+    "relative": 7.544327705450284e-07,
+    "absolute": 1.2438000089876056e-06,
+    "day": 113.0,
+    "peak": 1.64865586113
+   },
+   "I_humans_13_isolated": {
+    "relative": 7.04318943752048e-07,
+    "absolute": 9.250879220434882e-07,
+    "day": 117.0,
+    "peak": 1.31345029159
+   },
+   "I_humans_14_free": {
+    "relative": 7.139589757101318e-07,
+    "absolute": 1.2108901634722002e-06,
+    "day": 117.0,
+    "peak": 1.69602204702
+   },
+   "I_humans_14_isolated": {
+    "relative": 6.624398236478484e-07,
+    "absolute": 8.93773292931499e-07,
+    "day": 120.0,
+    "peak": 1.34921431506
+   },
+   "I_humans_15_free": {
+    "relative": 6.788200847993657e-07,
+    "absolute": 1.167946384050822e-06,
+    "day": 120.0,
+    "peak": 1.72055366393
+   },
+   "I_humans_15_isolated": {
+    "relative": 6.286101125752644e-07,
+    "absolute": 8.589876225872928e-07,
+    "day": 123.0,
+    "peak": 1.3664871204
+   },
+   "I_birds_1_free": {
+    "relative": 0.0026085685964731555,
+    "absolute": 0.8153360695504404,
+    "day": 1.0,
+    "peak": 312.560716499
+   },
+   "I_birds_1_isolated": {
+    "relative": 0.0006133843193242228,
+    "absolute": 0.16198827824598183,
+    "day": 1.0,
+    "peak": 264.089369654
+   },
+   "I_birds_2_free": {
+    "relative": 0.0010139476246008975,
+    "absolute": 0.3163162110647484,
+    "day": 1.0,
+    "peak": 311.965039801
+   },
+   "I_birds_2_isolated": {
+    "relative": 0.00017819237077892035,
+    "absolute": 0.04690288710166646,
+    "day": 1.0,
+    "peak": 263.21490026
+   },
+   "I_birds_3_free": {
+    "relative": 0.0001553077667590232,
+    "absolute": 0.048212932904666606,
+    "day": 1.0,
+    "peak": 310.43478321
+   },
+   "I_birds_3_isolated": {
+    "relative": 1.928774993778582e-05,
+    "absolute": 0.005044222710000001,
+    "day": 1.0,
+    "peak": 261.524684127
+   },
+   "I_birds_4_free": {
+    "relative": 1.1548945003934887e-05,
+    "absolute": 0.0035616256832000006,
+    "day": 1.0,
+    "peak": 308.394029237
+   },
+   "I_birds_4_isolated": {
+    "relative": 1.0010555729147058e-06,
+    "absolute": 0.00025976889202533355,
+    "day": 1.0,
+    "peak": 259.494976157
+   },
+   "I_birds_5_free": {
+    "relative": 1.4837053193926972e-06,
+    "absolute": 0.00045453402486828054,
+    "day": 141.0,
+    "peak": 306.350606773
+   },
+   "I_birds_5_isolated": {
+    "relative": 5.914186922097616e-07,
+    "absolute": 0.00015234635819183495,
+    "day": 190.0,
+    "peak": 257.594763572
+   },
+   "I_birds_6_free": {
+    "relative": 1.3318044909213316e-06,
+    "absolute": 0.0004059298179583948,
+    "day": 145.0,
+    "peak": 304.796853236
+   },
+   "I_birds_6_isolated": {
+    "relative": 5.825449608277314e-07,
+    "absolute": 0.00014929007721775633,
+    "day": 194.0,
+    "peak": 256.272197438
+   },
+   "I_birds_7_free": {
+    "relative": 1.1136857174659314e-06,
+    "absolute": 0.0003386741174438157,
+    "day": 150.0,
+    "peak": 304.10205692
+   },
+   "I_birds_7_isolated": {
+    "relative": 5.678376026501728e-07,
+    "absolute": 0.00014529178581312863,
+    "day": 83.0,
+    "peak": 255.868553148
+   },
+   "I_birds_8_free": {
+    "relative": 9.527804865308606e-07,
+    "absolute": 0.00028995286723443314,
+    "day": 188.0,
+    "peak": 304.322843859
+   },
+   "I_birds_8_isolated": {
+    "relative": 6.395257199715608e-07,
+    "absolute": 0.00016396267398022246,
+    "day": 91.0,
+    "peak": 256.381672949
+   },
+   "I_birds_9_free": {
+    "relative": 9.199214999036576e-07,
+    "absolute": 0.0002804360171353437,
+    "day": 192.0,
+    "peak": 304.847769255
+   },
+   "I_birds_9_isolated": {
+    "relative": 6.859145826004228e-07,
+    "absolute": 0.00017652138305379594,
+    "day": 97.0,
+    "peak": 257.351844576
+   },
+   "I_birds_10_free": {
+    "relative": 9.535969219133228e-07,
+    "absolute": 0.00029017438976097765,
+    "day": 91.0,
+    "peak": 304.294595644
+   },
+   "I_birds_10_isolated": {
+    "relative": 7.066939343246863e-07,
+    "absolute": 0.0001819953188260115,
+    "day": 103.0,
+    "peak": 257.530608353
+   },
+   "I_birds_11_free": {
+    "relative": 1.0944427396536553e-06,
+    "absolute": 0.0003293755856077496,
+    "day": 96.0,
+    "peak": 300.95278051
+   },
+   "I_birds_11_isolated": {
+    "relative": 7.106869832423193e-07,
+    "absolute": 0.00018147135901358524,
+    "day": 107.0,
+    "peak": 255.346394816
+   },
+   "I_birds_12_free": {
+    "relative": 1.2537732320146556e-06,
+    "absolute": 0.0003679007253651889,
+    "day": 101.0,
+    "peak": 293.43482216
+   },
+   "I_birds_12_isolated": {
+    "relative": 7.086021662141776e-07,
+    "absolute": 0.0001769215145088765,
+    "day": 110.0,
+    "peak": 249.676790369
+   },
+   "I_birds_13_free": {
+    "relative": 1.3432262796503469e-06,
+    "absolute": 0.00040314784055794917,
+    "day": 106.0,
+    "peak": 300.133973453
+   },
+   "I_birds_13_isolated": {
+    "relative": 6.674763556143249e-07,
+    "absolute": 0.00017015361962080533,
+    "day": 114.0,
+    "peak": 254.920819576
+   },
+   "I_birds_14_free": {
+    "relative": 1.4109606940141163e-06,
+    "absolute": 0.000434214715141934,
+    "day": 111.0,
+    "peak": 307.744019365
+   },
+   "I_birds_14_isolated": {
+    "relative": 6.221135809445091e-07,
+    "absolute": 0.0001623191893997955,
+    "day": 117.0,
+    "peak": 260.915682235
+   },
+   "I_birds_15_free": {
+    "relative": 1.4759643767939704e-06,
+    "absolute": 0.0004596865966846053,
+    "day": 116.0,
+    "peak": 311.448300455
+   },
+   "I_birds_15_isolated": {
+    "relative": 5.838221882698012e-07,
+    "absolute": 0.00015389657690434433,
+    "day": 120.0,
+    "peak": 263.601795198
+   },
+   "R_humans_1_free": {
+    "relative": 6.392448094969216e-06,
+    "absolute": 0.00045976931269933437,
+    "day": 1.0,
+    "peak": 71.9238241545
+   },
+   "R_humans_1_isolated": {
+    "relative": 0.0003184544184559441,
+    "absolute": 0.00010913432442166666,
+    "day": 1.0,
+    "peak": 0.34269998498
+   },
+   "R_humans_2_free": {
+    "relative": 1.0983003217543965e-06,
+    "absolute": 7.707395181433331e-05,
+    "day": 1.0,
+    "peak": 70.1756616908
+   },
+   "R_humans_2_isolated": {
+    "relative": 1.431526382311218e-05,
+    "absolute": 4.89438867106e-06,
+    "day": 1.0,
+    "peak": 0.3418999979
+   },
+   "R_humans_3_free": {
+    "relative": 2.897914787167513e-07,
+    "absolute": 1.9643264415947215e-05,
+    "day": 157.0,
+    "peak": 67.7841339674
+   },
+   "R_humans_3_isolated": {
+    "relative": 1.0988658044212951e-06,
+    "absolute": 3.7354733757395035e-07,
+    "day": 4.0,
+    "peak": 0.339938995345
+   },
+   "R_humans_4_free": {
+    "relative": 2.9603092071615856e-07,
+    "absolute": 1.9245774584675246e-05,
+    "day": 159.0,
+    "peak": 65.0127173814
+   },
+   "R_humans_4_isolated": {
+    "relative": 6.006854566751733e-07,
+    "absolute": 2.0265537845065573e-07,
+    "day": 191.0,
+    "peak": 0.337373539177
+   },
+   "R_humans_5_free": {
+    "relative": 3.217129993107009e-07,
+    "absolute": 1.9978857615399193e-05,
+    "day": 160.0,
+    "peak": 62.1014931265
+   },
+   "R_humans_5_isolated": {
+    "relative": 6.067228072806716e-07,
+    "absolute": 2.0313027374041503e-07,
+    "day": 195.0,
+    "peak": 0.334799139414
+   },
+   "R_humans_6_free": {
+    "relative": 3.749793607868872e-07,
+    "absolute": 2.2227140252795152e-05,
+    "day": 158.0,
+    "peak": 59.2756364141
+   },
+   "R_humans_6_isolated": {
+    "relative": 6.009657986308923e-07,
+    "absolute": 2.0000103412298742e-07,
+    "day": 198.0,
+    "peak": 0.332799361592
+   },
+   "R_humans_7_free": {
+    "relative": 4.4893490197345455e-07,
+    "absolute": 2.593468119371778e-05,
+    "day": 158.0,
+    "peak": 57.7693582738
+   },
+   "R_humans_7_isolated": {
+    "relative": 5.84582293065168e-07,
+    "absolute": 1.9396782985348082e-07,
+    "day": 203.0,
+    "peak": 0.331805858909
+   },
+   "R_humans_8_free": {
+    "relative": 5.212148801447466e-07,
+    "absolute": 3.0052057645946206e-05,
+    "day": 160.0,
+    "peak": 57.6577123769
+   },
+   "R_humans_8_isolated": {
+    "relative": 6.307445179786788e-07,
+    "absolute": 2.0945427264829064e-07,
+    "day": 95.0,
+    "peak": 0.332074662051
+   },
+   "R_humans_9_free": {
+    "relative": 5.774466309774654e-07,
+    "absolute": 3.326822648119787e-05,
+    "day": 163.0,
+    "peak": 57.6126427907
+   },
+   "R_humans_9_isolated": {
+    "relative": 6.852314885730689e-07,
+    "absolute": 2.2805465663133795e-07,
+    "day": 101.0,
+    "peak": 0.332814035015
+   },
+   "R_humans_10_free": {
+    "relative": 5.75415114200998e-07,
+    "absolute": 3.4598253478179686e-05,
+    "day": 166.0,
+    "peak": 60.1274673263
+   },
+   "R_humans_10_isolated": {
+    "relative": 7.158801374461606e-07,
+    "absolute": 2.381946070662e-07,
+    "day": 106.0,
+    "peak": 0.332729733103
+   },
+   "R_humans_11_free": {
+    "relative": 5.246904747568449e-07,
+    "absolute": 3.368144945881113e-05,
+    "day": 169.0,
+    "peak": 64.1929882078
+   },
+   "R_humans_11_isolated": {
+    "relative": 7.29906445530347e-07,
+    "absolute": 2.407558823969147e-07,
+    "day": 111.0,
+    "peak": 0.329844850489
+   },
+   "R_humans_12_free": {
+    "relative": 4.545557551320172e-07,
+    "absolute": 3.0893629585193594e-05,
+    "day": 169.0,
+    "peak": 67.9644449254
+   },
+   "R_humans_12_isolated": {
+    "relative": 7.368430402805911e-07,
+    "absolute": 2.3778192140277987e-07,
+    "day": 114.0,
+    "peak": 0.322703626694
+   },
+   "R_humans_13_free": {
+    "relative": 3.9381993747564595e-07,
+    "absolute": 2.7889504686129385e-05,
+    "day": 152.0,
+    "peak": 70.8179094865
+   },
+   "R_humans_13_isolated": {
+    "relative": 7.048974111357236e-07,
+    "absolute": 2.3140360327911225e-07,
+    "day": 118.0,
+    "peak": 0.328279831396
+   },
+   "R_humans_14_free": {
+    "relative": 3.581345128085921e-07,
+    "absolute": 2.594055114713001e-05,
+    "day": 149.0,
+    "peak": 72.4324247437
+   },
+   "R_humans_14_isolated": {
+    "relative": 6.617910230773332e-07,
+    "absolute": 2.231486185277909e-07,
+    "day": 121.0,
+    "peak": 0.337188947487
+   },
+   "R_humans_15_free": {
+    "relative": 3.3149087259767036e-07,
+    "absolute": 2.4117815783597507e-05,
+    "day": 150.0,
+    "peak": 72.7555953339
+   },
+   "R_humans_15_isolated": {
+    "relative": 6.26570811132881e-07,
+    "absolute": 2.1395580346306176e-07,
+    "day": 124.0,
+    "peak": 0.341471067055
+   },
+   "R_birds_1_free": {
+    "relative": 2.532764322515673e-05,
+    "absolute": 0.253610149633289,
+    "day": 1.0,
+    "peak": 10013.176014
+   },
+   "R_birds_1_isolated": {
+    "relative": 0.0018159774487147757,
+    "absolute": 0.1115347336518333,
+    "day": 1.0,
+    "peak": 61.4185675768
+   },
+   "R_birds_2_free": {
+    "relative": 7.795562135720782e-06,
+    "absolute": 0.07785383169183357,
+    "day": 1.0,
+    "peak": 9986.94261381
+   },
+   "R_birds_2_isolated": {
+    "relative": 0.00021569663169981635,
+    "absolute": 0.013202666551933327,
+    "day": 1.0,
+    "peak": 61.2094238463
+   },
+   "R_birds_3_free": {
+    "relative": 1.0936116970097548e-06,
+    "absolute": 0.010881434175199989,
+    "day": 1.0,
+    "peak": 9949.99797913
+   },
+   "R_birds_3_isolated": {
+    "relative": 1.2564804775012773e-05,
+    "absolute": 0.0007640924316566666,
+    "day": 1.0,
+    "peak": 60.8121212656
+   },
+   "R_birds_4_free": {
+    "relative": 4.693198294018482e-07,
+    "absolute": 0.004648613691642822,
+    "day": 154.0,
+    "peak": 9905.001665
+   },
+   "R_birds_4_isolated": {
+    "relative": 6.010367315978154e-07,
+    "absolute": 3.626438789439135e-05,
+    "day": 187.0,
+    "peak": 60.3363920837
+   },
+   "R_birds_5_free": {
+    "relative": 4.5271817852602276e-07,
+    "absolute": 0.00446556231509021,
+    "day": 158.0,
+    "peak": 9863.89000245
+   },
+   "R_birds_5_isolated": {
+    "relative": 6.057359790685602e-07,
+    "absolute": 3.627793848437477e-05,
+    "day": 190.0,
+    "peak": 59.8906780148
+   },
+   "R_birds_6_free": {
+    "relative": 4.2892137009260876e-07,
+    "absolute": 0.004258272219885839,
+    "day": 162.0,
+    "peak": 9927.86211367
+   },
+   "R_birds_6_isolated": {
+    "relative": 5.989477836702143e-07,
+    "absolute": 3.5686651230548705e-05,
+    "day": 194.0,
+    "peak": 59.5822410626
+   },
+   "R_birds_7_free": {
+    "relative": 4.061613460769786e-07,
+    "absolute": 0.004058154376252787,
+    "day": 163.0,
+    "peak": 9991.4834719
+   },
+   "R_birds_7_isolated": {
+    "relative": 5.81658029420058e-07,
+    "absolute": 3.46025888475765e-05,
+    "day": 198.0,
+    "peak": 59.4895747972
+   },
+   "R_birds_8_free": {
+    "relative": 3.92209710978928e-07,
+    "absolute": 0.003933341665288026,
+    "day": 162.0,
+    "peak": 10028.6697529
+   },
+   "R_birds_8_isolated": {
+    "relative": 6.428586011591525e-07,
+    "absolute": 3.8322245440980396e-05,
+    "day": 92.0,
+    "peak": 59.6122465685
+   },
+   "R_birds_9_free": {
+    "relative": 3.8995552330144737e-07,
+    "absolute": 0.003917551766789984,
+    "day": 162.0,
+    "peak": 10046.1502215
+   },
+   "R_birds_9_isolated": {
+    "relative": 6.9355061463653e-07,
+    "absolute": 4.1504437390926796e-05,
+    "day": 98.0,
+    "peak": 59.8434151957
+   },
+   "R_birds_10_free": {
+    "relative": 3.9226522312609344e-07,
+    "absolute": 0.003942795678995026,
+    "day": 164.0,
+    "peak": 10051.3516023
+   },
+   "R_birds_10_isolated": {
+    "relative": 7.214848709525237e-07,
+    "absolute": 4.321159597253654e-05,
+    "day": 103.0,
+    "peak": 59.8925877898
+   },
+   "R_birds_11_free": {
+    "relative": 4.224815983047261e-07,
+    "absolute": 0.00424606788692472,
+    "day": 121.0,
+    "peak": 10050.3025551
+   },
+   "R_birds_11_isolated": {
+    "relative": 7.359638746931144e-07,
+    "absolute": 4.3711574669202946e-05,
+    "day": 107.0,
+    "peak": 59.3936416885
+   },
+   "R_birds_12_free": {
+    "relative": 4.5713724052434984e-07,
+    "absolute": 0.004592921702169406,
+    "day": 126.0,
+    "peak": 10047.1396662
+   },
+   "R_birds_12_isolated": {
+    "relative": 7.479320328983966e-07,
+    "absolute": 4.344291139091183e-05,
+    "day": 110.0,
+    "peak": 58.0840363563
+   },
+   "R_birds_13_free": {
+    "relative": 4.80231887396161e-07,
+    "absolute": 0.004823162113098078,
+    "day": 131.0,
+    "peak": 10043.4024472
+   },
+   "R_birds_13_isolated": {
+    "relative": 7.20448103631882e-07,
+    "absolute": 4.272456222764731e-05,
+    "day": 113.0,
+    "peak": 59.3027617288
+   },
+   "R_birds_14_free": {
+    "relative": 4.929413889455211e-07,
+    "absolute": 0.004948342128955119,
+    "day": 135.0,
+    "peak": 10038.39856
+   },
+   "R_birds_14_isolated": {
+    "relative": 6.880854770088221e-07,
+    "absolute": 4.176133930400283e-05,
+    "day": 116.0,
+    "peak": 60.6920807071
+   },
+   "R_birds_15_free": {
+    "relative": 4.977099108446769e-07,
+    "absolute": 0.004991735047042312,
+    "day": 139.0,
+    "peak": 10029.4065645
+   },
+   "R_birds_15_isolated": {
+    "relative": 6.626542855771845e-07,
+    "absolute": 4.062778928926036e-05,
+    "day": 120.0,
+    "peak": 61.3106866937
+   }
+  },
+  "aggregated": {
+   "S_humans": {
+    "relative": 1.5882495402668913e-08,
+    "absolute": 0.0011911871552001685,
+    "day": 1.0,
+    "peak": 75000.0
+   },
+   "S_birds": {
+    "relative": 3.16963503537132e-07,
+    "absolute": 0.2376909313024953,
+    "day": 1.0,
+    "peak": 749900.0
+   },
+   "E_humans": {
+    "relative": 9.940283663796143e-05,
+    "absolute": 0.0021444816110420817,
+    "day": 1.0,
+    "peak": 21.57364602031
+   },
+   "E_birds": {
+    "relative": 0.00020441192735331007,
+    "absolute": 0.5748516767407068,
+    "day": 1.0,
+    "peak": 2812.2217924549996
+   },
+   "I_humans": {
+    "relative": 2.8780718682942597e-05,
+    "absolute": 0.0012362718848105414,
+    "day": 1.0,
+    "peak": 42.954864971570004
+   },
+   "I_birds": {
+    "relative": 5.29895024835759e-05,
+    "absolute": 0.4239175431423092,
+    "day": 1.0,
+    "peak": 8000.028746707001
+   },
+   "R_humans": {
+    "relative": 4.0418787435080207e-07,
+    "absolute": 0.0003867948976221669,
+    "day": 158.0,
+    "peak": 956.96808877166
+   },
+   "R_birds": {
+    "relative": 5.797936308298208e-07,
+    "absolute": 0.08675678478516247,
+    "day": 1.0,
+    "peak": 149633.90449976682
+   }
+  }
+ }
+}

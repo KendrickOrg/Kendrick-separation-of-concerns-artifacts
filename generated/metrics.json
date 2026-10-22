@@ -1,0 +1,552 @@
+{
+ "sizes": {
+  "1": {
+   "kendrick": {
+    "loc": 30,
+    "chars": 500,
+    "entities": 5,
+    "avg": 100.0
+   },
+   "matlab": {
+    "loc": 31,
+    "chars": 595,
+    "entities": 4,
+    "avg": 148.8
+   }
+  },
+  "2": {
+   "kendrick": {
+    "loc": 38,
+    "chars": 816,
+    "entities": 6,
+    "avg": 136.0
+   },
+   "matlab": {
+    "loc": 37,
+    "chars": 765,
+    "entities": 4,
+    "avg": 191.2
+   }
+  },
+  "3": {
+   "kendrick": {
+    "loc": 45,
+    "chars": 982,
+    "entities": 7,
+    "avg": 140.3
+   },
+   "matlab": {
+    "loc": 67,
+    "chars": 1751,
+    "entities": 4,
+    "avg": 437.8
+   }
+  },
+  "4": {
+   "kendrick": {
+    "loc": 56,
+    "chars": 1291,
+    "entities": 8,
+    "avg": 161.4
+   },
+   "matlab": {
+    "loc": 80,
+    "chars": 2258,
+    "entities": 4,
+    "avg": 564.5
+   }
+  }
+ },
+ "efforts": {
+  "1": {
+   "kendrick": {
+    "changed_entities": 3,
+    "added_entities": 1,
+    "reused_entities": 2,
+    "changed_lines": 7,
+    "added_lines": 8,
+    "deleted_lines": 0,
+    "changed": [
+     "Influenza",
+     "Scr1",
+     "InfluenzaViz"
+    ],
+    "added": [
+     "MultiSpecies"
+    ],
+    "reused": [
+     "SEIRS",
+     "InfluenzaSim"
+    ]
+   },
+   "matlab": {
+    "changed_entities": 3,
+    "added_entities": 0,
+    "reused_entities": 1,
+    "changed_lines": 20,
+    "added_lines": 6,
+    "deleted_lines": 0,
+    "changed": [
+     "SEIRSInfluenza.m",
+     "modelODEs.m",
+     "visualization.m"
+    ],
+    "added": [],
+    "reused": [
+     "resolve.m"
+    ]
+   }
+  },
+  "2": {
+   "kendrick": {
+    "changed_entities": 3,
+    "added_entities": 1,
+    "reused_entities": 3,
+    "changed_lines": 7,
+    "added_lines": 8,
+    "deleted_lines": 1,
+    "changed": [
+     "Influenza",
+     "Scr1",
+     "InfluenzaViz"
+    ],
+    "added": [
+     "MetaPopulation"
+    ],
+    "reused": [
+     "SEIRS",
+     "MultiSpecies",
+     "InfluenzaSim"
+    ]
+   },
+   "matlab": {
+    "changed_entities": 3,
+    "added_entities": 0,
+    "reused_entities": 1,
+    "changed_lines": 20,
+    "added_lines": 34,
+    "deleted_lines": 4,
+    "changed": [
+     "SEIRSInfluenza.m",
+     "modelODEs.m",
+     "visualization.m"
+    ],
+    "added": [],
+    "reused": [
+     "resolve.m"
+    ]
+   }
+  },
+  "3": {
+   "kendrick": {
+    "changed_entities": 3,
+    "added_entities": 1,
+    "reused_entities": 4,
+    "changed_lines": 9,
+    "added_lines": 11,
+    "deleted_lines": 0,
+    "changed": [
+     "Influenza",
+     "Scr1",
+     "InfluenzaViz"
+    ],
+    "added": [
+     "Isolation"
+    ],
+    "reused": [
+     "SEIRS",
+     "MultiSpecies",
+     "MetaPopulation",
+     "InfluenzaSim"
+    ]
+   },
+   "matlab": {
+    "changed_entities": 3,
+    "added_entities": 0,
+    "reused_entities": 1,
+    "changed_lines": 10,
+    "added_lines": 13,
+    "deleted_lines": 0,
+    "changed": [
+     "SEIRSInfluenza.m",
+     "modelODEs.m",
+     "visualization.m"
+    ],
+    "added": [],
+    "reused": [
+     "resolve.m"
+    ]
+   }
+  }
+ },
+ "kendrick": {
+  "declarations": {
+   "SEIRS": [
+    "E",
+    "I",
+    "R",
+    "S",
+    "SEIRS",
+    "beta",
+    "gamma",
+    "lambda",
+    "mu",
+    "nu",
+    "sigma",
+    "status"
+   ],
+   "MultiSpecies": [
+    "MultiSpecies",
+    "birds",
+    "humans",
+    "species"
+   ],
+   "MetaPopulation": [
+    "1",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "MetaPopulation",
+    "rho",
+    "zone"
+   ],
+   "Isolation": [
+    "Isolation",
+    "delta",
+    "epsilon",
+    "free",
+    "isolated",
+    "isolation"
+   ],
+   "Influenza": [
+    "Influenza"
+   ],
+   "Scr1": [
+    "Scr1",
+    "i",
+    "k",
+    "p"
+   ],
+   "InfluenzaSim": [
+    "InfluenzaSim"
+   ],
+   "InfluenzaViz": [
+    "InfluenzaViz"
+   ]
+  },
+  "dependencies": {
+   "Influenza -> Isolation": 1,
+   "Influenza -> MetaPopulation": 1,
+   "Influenza -> MultiSpecies": 1,
+   "Influenza -> SEIRS": 1,
+   "InfluenzaSim -> Scr1": 1,
+   "InfluenzaViz -> InfluenzaSim": 1,
+   "InfluenzaViz -> MultiSpecies": 3,
+   "InfluenzaViz -> SEIRS": 1,
+   "Scr1 -> Influenza": 1,
+   "Scr1 -> Isolation": 9,
+   "Scr1 -> MetaPopulation": 4,
+   "Scr1 -> MultiSpecies": 10,
+   "Scr1 -> SEIRS": 14
+  },
+  "coupling": {
+   "SEIRS": {
+    "Ca": 16,
+    "Ce": 0,
+    "I": 0.0
+   },
+   "MultiSpecies": {
+    "Ca": 14,
+    "Ce": 0,
+    "I": 0.0
+   },
+   "MetaPopulation": {
+    "Ca": 5,
+    "Ce": 0,
+    "I": 0.0
+   },
+   "Isolation": {
+    "Ca": 10,
+    "Ce": 0,
+    "I": 0.0
+   },
+   "Influenza": {
+    "Ca": 1,
+    "Ce": 4,
+    "I": 0.8
+   },
+   "Scr1": {
+    "Ca": 1,
+    "Ce": 38,
+    "I": 0.97
+   },
+   "InfluenzaSim": {
+    "Ca": 1,
+    "Ce": 1,
+    "I": 0.5
+   },
+   "InfluenzaViz": {
+    "Ca": 0,
+    "Ce": 5,
+    "I": 1.0
+   }
+  }
+ },
+ "matlab": {
+  "dependencies": {
+   "Isolation -> MetaPopulation": 24,
+   "Isolation -> MultiSpecies": 17,
+   "Isolation -> SEIRS": 45,
+   "MetaPopulation -> Isolation": 22,
+   "MetaPopulation -> MultiSpecies": 75,
+   "MetaPopulation -> SEIRS": 86,
+   "MultiSpecies -> Isolation": 19,
+   "MultiSpecies -> MetaPopulation": 81,
+   "MultiSpecies -> SEIRS": 52,
+   "SEIRS -> Isolation": 23,
+   "SEIRS -> MetaPopulation": 56,
+   "SEIRS -> MultiSpecies": 50
+  },
+  "coupling": {
+   "SEIRS": {
+    "Ca": 183,
+    "Ce": 129,
+    "I": 0.41
+   },
+   "MultiSpecies": {
+    "Ca": 142,
+    "Ce": 152,
+    "I": 0.52
+   },
+   "MetaPopulation": {
+    "Ca": 161,
+    "Ce": 183,
+    "I": 0.53
+   },
+   "Isolation": {
+    "Ca": 64,
+    "Ce": 86,
+    "I": 0.57
+   }
+  }
+ },
+ "traces": {
+  "kendrick": {
+   "concerns": {
+    "SEIRS": {
+     "statements": 21,
+     "chunks": 6,
+     "entities": 4,
+     "share": 37.5
+    },
+    "MultiSpecies": {
+     "statements": 15,
+     "chunks": 7,
+     "entities": 4,
+     "share": 26.8
+    },
+    "MetaPopulation": {
+     "statements": 10,
+     "chunks": 6,
+     "entities": 3,
+     "share": 17.9
+    },
+    "Isolation": {
+     "statements": 15,
+     "chunks": 4,
+     "entities": 3,
+     "share": 26.8
+    }
+   },
+   "statements": 56,
+   "mixed": 14,
+   "mixed_share": 25.0
+  },
+  "matlab": {
+   "concerns": {
+    "SEIRS": {
+     "statements": 40,
+     "chunks": 13,
+     "entities": 3,
+     "share": 50.0
+    },
+    "MultiSpecies": {
+     "statements": 47,
+     "chunks": 15,
+     "entities": 3,
+     "share": 58.8
+    },
+    "MetaPopulation": {
+     "statements": 56,
+     "chunks": 13,
+     "entities": 3,
+     "share": 70.0
+    },
+    "Isolation": {
+     "statements": 20,
+     "chunks": 9,
+     "entities": 2,
+     "share": 25.0
+    }
+   },
+   "statements": 80,
+   "mixed": 55,
+   "mixed_share": 68.8
+  }
+ },
+ "model3": {
+  "sizes": {
+   "kendrick": {
+    "loc": 45,
+    "chars": 982,
+    "entities": 7,
+    "avg": 140.3
+   },
+   "matlab": {
+    "loc": 67,
+    "chars": 1751,
+    "entities": 4,
+    "avg": 437.8
+   },
+   "algebraicpetri": {
+    "loc": 115,
+    "chars": 3379,
+    "entities": 5,
+    "avg": 675.8
+   }
+  },
+  "traces": {
+   "kendrick": {
+    "concerns": {
+     "SEIRS": {
+      "statements": 19,
+      "chunks": 6,
+      "entities": 4,
+      "share": 42.2
+     },
+     "MultiSpecies": {
+      "statements": 14,
+      "chunks": 5,
+      "entities": 4,
+      "share": 31.1
+     },
+     "MetaPopulation": {
+      "statements": 11,
+      "chunks": 7,
+      "entities": 4,
+      "share": 24.4
+     },
+     "Isolation": {
+      "statements": 0,
+      "chunks": 0,
+      "entities": 0,
+      "share": 0.0
+     }
+    },
+    "statements": 45,
+    "mixed": 11,
+    "mixed_share": 24.4
+   },
+   "matlab": {
+    "concerns": {
+     "SEIRS": {
+      "statements": 37,
+      "chunks": 9,
+      "entities": 3,
+      "share": 55.2
+     },
+     "MultiSpecies": {
+      "statements": 37,
+      "chunks": 13,
+      "entities": 3,
+      "share": 55.2
+     },
+     "MetaPopulation": {
+      "statements": 46,
+      "chunks": 11,
+      "entities": 3,
+      "share": 68.7
+     },
+     "Isolation": {
+      "statements": 0,
+      "chunks": 0,
+      "entities": 0,
+      "share": 0.0
+     }
+    },
+    "statements": 67,
+    "mixed": 40,
+    "mixed_share": 59.7
+   },
+   "algebraicpetri": {
+    "concerns": {
+     "SEIRS": {
+      "statements": 31,
+      "chunks": 9,
+      "entities": 2,
+      "share": 27.0
+     },
+     "MultiSpecies": {
+      "statements": 33,
+      "chunks": 11,
+      "entities": 2,
+      "share": 28.7
+     },
+     "MetaPopulation": {
+      "statements": 23,
+      "chunks": 14,
+      "entities": 2,
+      "share": 20.0
+     },
+     "Isolation": {
+      "statements": 0,
+      "chunks": 0,
+      "entities": 0,
+      "share": 0.0
+     }
+    },
+    "statements": 115,
+    "mixed": 16,
+    "mixed_share": 13.9
+   }
+  },
+  "algebraicpetri": {
+   "dependencies": {
+    "MetaPopulation -> MultiSpecies": 12,
+    "MetaPopulation -> SEIRS": 4,
+    "MultiSpecies -> MetaPopulation": 10,
+    "MultiSpecies -> SEIRS": 21,
+    "SEIRS -> MetaPopulation": 5,
+    "SEIRS -> MultiSpecies": 26
+   },
+   "coupling": {
+    "SEIRS": {
+     "Ca": 25,
+     "Ce": 31,
+     "I": 0.55
+    },
+    "MultiSpecies": {
+     "Ca": 38,
+     "Ce": 31,
+     "I": 0.45
+    },
+    "MetaPopulation": {
+     "Ca": 15,
+     "Ce": 16,
+     "I": 0.52
+    }
+   }
+  }
+ }
+}

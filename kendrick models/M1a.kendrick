@@ -1,0 +1,31 @@
+"The SIR example of the Pharo Kendrick wiki, in the syntax of the paper."
+
+KModel SIR
+    attribute: #(status in (S I R));
+    parameters: #(beta lambda gamma);
+    lambda: #(beta*I/N);
+    transitions: #(
+        S -- lambda --> I.
+        I -- gamma --> R).
+
+Composition Model1
+    model: 'SIR'.
+
+Scenario M1Parameters
+    on: 'Model1';
+    beta: 0.1;
+    gamma: #(1/30);
+    S: 90;
+    I: 10.
+
+Simulation M1Sim
+    solver: 'gillespie';
+    scenario: 'M1Parameters';
+    from: 0;
+    to: 365;
+    step: 1.
+
+Visualization MeaslesDiagramViz
+    plot: 'diagram';
+    for: 'M1Sim';
+    xLabel: 'Time (days)'.
