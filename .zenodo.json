@@ -1,0 +1,31 @@
+{
+  "title": "Artifacts of \"A Formal Approach to Separation of Concerns in Epidemiology Modeling\"",
+  "description": "The models, scripts and outputs that reproduce the measurements and the numerical comparisons of the paper \"A Formal Approach to Separation of Concerns in Epidemiology Modeling\" (M. Ziane, T. M. A. Bui, S. Stinckwich), submitted to Software and Systems Modeling: the four models of the paper in Kendrick, in MATLAB and in AlgebraicPetri (Julia), the script that measures scattering and tangling and the size of the changes between the models with its attribution table, the scripts that compare the trajectories of the three implementations, the outputs of all the scripts, the trajectories of every model and the generated figures. The reference implementation of the Kendrick language is the separate repository JKendrick.",
+  "creators": [
+    {
+      "name": "Ziane, Mikal",
+      "affiliation": "Université Paris Cité; LIP6, Sorbonne Université, CNRS, Paris, France",
+      "orcid": "0000-0003-1860-485X"
+    },
+    {
+      "name": "Bui, Thi Mai Anh",
+      "affiliation": "Hanoi University of Science and Technology, Hanoi, Vietnam"
+    },
+    {
+      "name": "Stinckwich, Serge",
+      "affiliation": "UNU Paris Office, Learning Planet Institute, Paris, France"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "keywords": [
+    "epidemiological modeling",
+    "domain-specific language",
+    "separation of concerns",
+    "compartmental models",
+    "reproducibility",
+    "Kendrick"
+  ],
+  "language": "eng"
+}
