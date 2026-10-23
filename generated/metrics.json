@@ -17,9 +17,9 @@
   "2": {
    "kendrick": {
     "loc": 38,
-    "chars": 816,
+    "chars": 826,
     "entities": 6,
-    "avg": 136.0
+    "avg": 137.7
    },
    "matlab": {
     "loc": 37,
@@ -31,9 +31,9 @@
   "3": {
    "kendrick": {
     "loc": 45,
-    "chars": 982,
+    "chars": 1002,
     "entities": 7,
-    "avg": 140.3
+    "avg": 143.1
    },
    "matlab": {
     "loc": 67,
@@ -45,9 +45,9 @@
   "4": {
    "kendrick": {
     "loc": 56,
-    "chars": 1291,
+    "chars": 1311,
     "entities": 8,
-    "avg": 161.4
+    "avg": 163.9
    },
    "matlab": {
     "loc": 80,
@@ -440,9 +440,9 @@
   "sizes": {
    "kendrick": {
     "loc": 45,
-    "chars": 982,
+    "chars": 1002,
     "entities": 7,
-    "avg": 140.3
+    "avg": 143.1
    },
    "matlab": {
     "loc": 67,

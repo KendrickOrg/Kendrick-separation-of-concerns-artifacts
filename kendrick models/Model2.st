@@ -9,7 +9,7 @@ KModel SEIRS
          R:t=gamma*I - mu*R - nu*R.).
 
 KModel MultiSpecies
-    attribute: #(species in (humans birds)).
+    attribute: #(species in (humans birds)); inherited.
 
 Composition Influenza
     model: 'SEIRS';

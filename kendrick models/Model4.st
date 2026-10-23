@@ -9,10 +9,10 @@ KModel SEIRS
          R:t=gamma*I - mu*R - nu*R.).
 
 KModel MultiSpecies
-    attribute: #(species in (humans birds)).
+    attribute: #(species in (humans birds)); inherited.
 
 KModel MetaPopulation
-    attribute: #(zone in (range 1 15));
+    attribute: #(zone in (range 1 15)); inherited;
     parameters: #(rho);
     topology: #(ring oneWay);
     transitionRate: #(rho).
