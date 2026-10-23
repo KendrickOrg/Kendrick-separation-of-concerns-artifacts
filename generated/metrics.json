@@ -403,6 +403,37 @@
    "statements": 80,
    "mixed": 55,
    "mixed_share": 68.8
+  },
+  "matlab_without_dimensions": {
+   "concerns": {
+    "SEIRS": {
+     "statements": 40,
+     "chunks": 13,
+     "entities": 3,
+     "share": 50.0
+    },
+    "MultiSpecies": {
+     "statements": 1,
+     "chunks": 1,
+     "entities": 1,
+     "share": 1.2
+    },
+    "MetaPopulation": {
+     "statements": 17,
+     "chunks": 7,
+     "entities": 3,
+     "share": 21.2
+    },
+    "Isolation": {
+     "statements": 20,
+     "chunks": 9,
+     "entities": 2,
+     "share": 25.0
+    }
+   },
+   "statements": 80,
+   "mixed": 17,
+   "mixed_share": 21.2
   }
  },
  "model3": {

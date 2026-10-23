@@ -11,6 +11,7 @@ reads  kendrick models/Model1..4.st  and  matlab models/M1..M4/*.m  and writes
     generated/dependency-metrics.tex  Table: Ca, Ce, I of the entities of Model 4
     generated/scattering.tex          Table: trace of each concern of Model 4 (statements, chunks, entities)
     generated/metrics.json            every number, for the text
+    generated/attribution-sensitivity.tex  Table: the MATLAB traces of Model 4 with and without the dimensions and index variables
     figures/dependency-graph.pdf      Figure: dependency graphs of Model 4 (MATLAB and Kendrick)
 
 Conventions (stated in the paper):
@@ -308,6 +309,39 @@ def traces(entities, lang):
     return {"concerns": stats, "statements": total, "mixed": mixed, "mixed_share": round(100.0 * mixed / total, 1) if total else 0}
 
 
+# The attribution without the dimensions and index variables (Section 5.1, "The disputable entries"):
+# the species and metapopulation concerns of the MATLAB code then exist only through the species names,
+# the adjacency matrix, the migration rate and the migration terms.
+M_DIMENSIONS = {"ns", "s", "np", "p", "q"}
+M_CONCERNS_WITHOUT_DIMENSIONS = {c: [n for n in names if n not in M_DIMENSIONS] for c, names in M_CONCERNS.items()}
+
+
+def traces_with(entities, lang, table):
+    """traces() under another attribution table."""
+    saved = TABLES[lang]
+    TABLES[lang] = table
+    try:
+        return traces(entities, lang)
+    finally:
+        TABLES[lang] = saved
+
+
+def tex_sensitivity(mt, mt_without):
+    """The MATLAB traces of Model 4 under the two attributions, side by side."""
+    out = [r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{|l|r|r|r|r|r|r|}", r"\cmidrule{2-7}",
+           r"\multicolumn{1}{c|}{} & \multicolumn{3}{c|}{With dimensions and index variables} & \multicolumn{3}{c|}{Without} \\",
+           r"\hline", r"Concern & Statements & Share (\%) & Chunks & Statements & Share (\%) & Chunks \\", r"\hline"]
+    for c in mt["concerns"]:
+        a, b = mt["concerns"][c], mt_without["concerns"][c]
+        out.append(f"{c} & {a['statements']} & {a['share']} & {a['chunks']} & {b['statements']} & {b['share']} & {b['chunks']} \\\\")
+    out.append(r"\hline")
+    out.append(r"Intertwined statements (\%%) & \multicolumn{3}{c|}{%s} & \multicolumn{3}{c|}{%s} \\"
+               % (mt["mixed_share"], mt_without["mixed_share"]))
+    out.append(r"\hline")
+    out.append(r"\end{tabular}")
+    return "\n".join(out) + "\n"
+
+
 def tex_traces(kt, mt):
     out = [r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{|l|r|r|r|r|}", r"\hline",
            r"Concern & Statements & Share (\%) & Chunks & Entities \\", r"\hline"]
@@ -451,13 +485,13 @@ def draw(kdeps, knodes, mdeps, mnodes, path):
     for i, n in enumerate(mnodes):
         ang = math.pi / 2 - 2 * math.pi * i / len(mnodes)
         mpos[n] = (2.4 * math.cos(ang), 2.0 * math.sin(ang))
-    graph(axes[0], mdeps, mnodes, mpos, "(a) MATLAB: concerns", 0.25)
+    graph(axes[0], mdeps, mnodes, mpos, "(a) MATLAB: concern co-occurrences", 0.25)
     # (b) Kendrick entities: concerns on a row at the bottom, the others above (arrows point down or sideways)
     kpos = {"SEIRS": (-3, 0), "MultiSpecies": (-1, 0), "MetaPopulation": (1, 0), "Isolation": (3, 0),
             "Influenza": (3.2, 1.7), "Scr1": (-1, 1.8), "InfluenzaSim": (0.2, 3.3), "InfluenzaViz": (-3, 3.3)}
     for i, n in enumerate(n for n in knodes if n not in kpos):
         kpos[n] = (i * 1.5 - 3, 4.5)
-    graph(axes[1], kdeps, knodes, kpos, "(b) Kendrick: entities", 0.0)
+    graph(axes[1], kdeps, knodes, kpos, "(b) Kendrick: entity references", 0.0)
     fig.tight_layout()
     fig.savefig(path)
     plt.close(fig)
@@ -480,6 +514,8 @@ def main():
     kc, mc = coupling(knodes, kdeps), coupling(mnodes, mdeps)
     kt, mt = traces(k4, "kendrick"), traces(m4, "matlab")
     (OUT / "scattering.tex").write_text(tex_traces(kt, mt), encoding="utf-8")
+    mt_without = traces_with(m4, "matlab", M_CONCERNS_WITHOUT_DIMENSIONS)
+    (OUT / "attribution-sensitivity.tex").write_text(tex_sensitivity(mt, mt_without), encoding="utf-8")
     # Model 3 in the three languages (the AlgebraicPetri version exists for Model 3 only)
     k3, m3 = models[3]
     j3 = julia_entities(JDIR)
@@ -498,7 +534,7 @@ def main():
         "kendrick": {"declarations": {e: sorted(s) for e, s in kdecl.items()},
                      "dependencies": {f"{a} -> {b}": v for (a, b), v in sorted(kdeps.items())}, "coupling": kc},
         "matlab": {"dependencies": {f"{a} -> {b}": v for (a, b), v in sorted(mdeps.items())}, "coupling": mc},
-        "traces": {"kendrick": kt, "matlab": mt},
+        "traces": {"kendrick": kt, "matlab": mt, "matlab_without_dimensions": mt_without},
         "model3": {"sizes": {"kendrick": size(k3), "matlab": size(m3), "algebraicpetri": size(j3)},
                    "traces": {"kendrick": kt3, "matlab": mt3, "algebraicpetri": jt3},
                    "algebraicpetri": {"dependencies": {f"{a} -> {b}": v for (a, b), v in sorted(jdeps.items())}, "coupling": jc}},
