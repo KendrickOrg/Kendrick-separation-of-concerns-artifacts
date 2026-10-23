@@ -363,7 +363,7 @@ def tex_size(sizes):
 def tex_effort(efforts):
     out = [r"\begin{tabular}{|c|rr|rr|rr|rr|rr|rr|}", r"\cmidrule{2-13}",
            r"\multicolumn{1}{c|}{} & \multicolumn{2}{c|}{Changed} & \multicolumn{2}{c|}{Added} & \multicolumn{2}{c|}{Reused} & \multicolumn{2}{c|}{Changed} & \multicolumn{2}{c|}{Added} & \multicolumn{2}{c|}{Deleted} \\",
-           r"\multicolumn{1}{c|}{} & \multicolumn{2}{c|}{entities} & \multicolumn{2}{c|}{entities} & \multicolumn{2}{c|}{entities} & \multicolumn{2}{c|}{lines} & \multicolumn{2}{c|}{lines} & \multicolumn{2}{c|}{lines} \\",
+           r"\multicolumn{1}{c|}{} & \multicolumn{2}{c|}{entities} & \multicolumn{2}{c|}{entities} & \multicolumn{2}{c|}{entities} & \multicolumn{2}{c|}{statements} & \multicolumn{2}{c|}{statements} & \multicolumn{2}{c|}{statements} \\",
            r"\cmidrule{2-13}",
            r"\multicolumn{1}{c|}{} & M & K & M & K & M & K & M & K & M & K & M & K \\", r"\hline"]
     for i, n in enumerate(MODELS[:-1]):
