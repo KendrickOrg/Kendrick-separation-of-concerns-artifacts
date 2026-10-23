@@ -33,27 +33,25 @@ delta = 0.2                                                   # isolation of the
 epsilon = 1.0                                                 # release of the recovered
 N0 = Dict(:humans => 5000.0, :birds => 50000.0)             # population of each zone and species at time 0
 
-species_of(label) = endswith(String(label), "_H") ? :humans : :birds
-
-# The source place of a transition (its first input), whose label gives the status of the individual:
-# the isolate transitions of the SEIRS net are reflexive and all named :isolate, so the status that is
-# isolated or released can only be read on the place.
-function source(t)
-    i = first(incident(net, t, :it))
-    sname(net, net[i, :is])
+# A place of a transition, its first input, or its first output for a birth, whose label gives the
+# status, the species and the isolation status of the individual: the reflexive transitions that
+# add_reflexives creates are all named by their kind, so these can only be read on the place.
+function place_of(t)
+    ins = incident(net, t, :it)
+    place = isempty(ins) ? net[first(incident(net, t, :ot)), :os] : net[first(ins), :is]
+    sname(net, place)
 end
 
 function rate(t)
     d, k, z, q = tname(net, t)          # the SEIRS, species, ring and isolation components of the transition
-    src = isempty(incident(net, t, :it)) ? nothing : source(t)     # a birth has no source
-    status, iso = src === nothing ? (nothing, nothing) : (src[1], src[4])
+    status, s, _, iso = place_of(t)
     d == :infection && return beta[k] / N0[infectious_of[k]]
-    d == :incubation && return sigma[species_of(k)]
-    d == :recovery && return gamma[species_of(k)]
+    d == :incubation && return sigma[s]
+    d == :recovery && return gamma[s]
     d == :loss && return iso == :free ? nu : 0.0                 # isolated individuals keep their immunity
-    d == :birth && return mu[species_of(k)] * N0[species_of(k)]
-    startswith(String(d), "death") && return mu[species_of(k)]
-    startswith(String(d), "strata") && return rho[species_of(k)]
+    d == :birth && return mu[s] * N0[s]
+    startswith(String(d), "death") && return mu[s]
+    startswith(String(d), "strata") && return rho[s]
     d == :isolate && q == :isolation && return status == :I ? delta : 0.0
     d == :isolate && q == :release && return status == :R ? epsilon : 0.0
     error("no rate for $(tname(net, t))")

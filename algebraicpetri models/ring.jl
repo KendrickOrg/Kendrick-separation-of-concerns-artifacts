@@ -1,5 +1,6 @@
 # The metapopulation concern: n zones on a one-way ring, with a migration (strata) transition from each
-# zone to the next. Infection, disease progression, births and deaths are reflexive: local to a zone.
+# zone to the next. Infection, disease progression, births and deaths are reflexive, local to a zone:
+# add_reflexives adds them from the list of kinds of each zone.
 include("ontology.jl")
 
 function ring_model(n)
@@ -15,13 +16,7 @@ function ring_model(n)
         set_junction!(uwd, ports(uwd, box)[1], zones[i])
         set_junction!(uwd, ports(uwd, box)[2], zones[j])
         push!(names, Symbol("migration_$(i)_$(j)"))
-        for (t, arity) in ((:infect, 4), (:disease, 2), (:birth, 1), (:death, 1))
-            box = add_box!(uwd, fill(:Pop, arity), name=t)
-            for port in ports(uwd, box)
-                set_junction!(uwd, port, zones[i])
-            end
-            push!(names, Symbol("$(t)_$(i)"))
-        end
     end
-    oapply_typed(ontology, uwd, names)
+    ring = oapply_typed(ontology, uwd, names)
+    add_reflexives(ring, [[:infect, :disease, :birth, :death] for _ in 1:n], ontology)
 end

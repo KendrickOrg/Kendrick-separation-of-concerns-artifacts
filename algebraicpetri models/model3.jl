@@ -27,20 +27,28 @@ nu = 0.00274
 rho = Dict(:humans => 0.03, :birds => 0.1)
 N0 = Dict(:humans => 5000.0, :birds => 50000.0)             # population of each zone and species, stationary
 
-species_of(label) = endswith(String(label), "_H") ? :humans : :birds
-
-function rate(label)
-    d, k, z = label                     # the SEIRS, species and ring components of the transition
-    d == :infection && return beta[k] / N0[infectious_of[k]]
-    d == :incubation && return sigma[species_of(k)]
-    d == :recovery && return gamma[species_of(k)]
-    d == :loss && return nu
-    d == :birth && return mu[species_of(k)] * N0[species_of(k)]
-    startswith(String(d), "death") && return mu[species_of(k)]
-    startswith(String(d), "strata") && return rho[species_of(k)]
-    error("no rate for $label")
+# The species of a transition, read on its first input place, or on its first output place for a birth:
+# the reflexive transitions that add_reflexives creates are all named by their kind, so the species
+# can only be read on the place.
+function species_of(t)
+    ins = incident(net, t, :it)
+    place = isempty(ins) ? net[first(incident(net, t, :ot)), :os] : net[first(ins), :is]
+    sname(net, place)[2]
 end
-p = [rate(tname(net, t)) for t in 1:nt(net)]
+
+function rate(t)
+    d, k, z = tname(net, t)             # the SEIRS, species and ring components of the transition
+    s = species_of(t)
+    d == :infection && return beta[k] / N0[infectious_of[k]]
+    d == :incubation && return sigma[s]
+    d == :recovery && return gamma[s]
+    d == :loss && return nu
+    d == :birth && return mu[s] * N0[s]
+    startswith(String(d), "death") && return mu[s]
+    startswith(String(d), "strata") && return rho[s]
+    error("no rate for $(tname(net, t))")
+end
+p = [rate(t) for t in 1:nt(net)]
 
 # ---- initial state: 5000 humans and 50000 birds per zone, 100 infectious birds in zone 1
 function initial(label)
