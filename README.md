@@ -5,7 +5,7 @@ paper, submitted to Software and Systems Modeling (SoSyM): the models in the thr
 that compute the metrics of Section 5 and compare the trajectories of Section 4.5, and their outputs.
 The reference implementation of the Kendrick language is a separate repository,
 https://github.com/KendrickOrg/JKendrick; the results of the paper were obtained with its release v0.2.1, archived at
-https://doi.org/10.5281/zenodo.23590968. This repository is archived at https://doi.org/10.5281/zenodo.23588340 (release v1.0).
+https://doi.org/10.5281/zenodo.23590968. This repository is archived at https://doi.org/10.5281/zenodo.23592009 (release v1.0.1).
 
 ## Contents
 
