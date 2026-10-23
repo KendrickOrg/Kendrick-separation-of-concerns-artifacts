@@ -460,7 +460,8 @@ def draw(kdeps, knodes, mdeps, mnodes, path):
             ax.add_patch(FancyBboxPatch((x - BW / 2, y - BH / 2), BW, BH, boxstyle="round,pad=0.02",
                                         fc=color(n), ec="#444", lw=0.8))
             ax.text(x, y, n, ha="center", va="center", fontsize=8)
-        for (a, b), w in deps.items():
+        # sorted: the MATLAB counts are accumulated over sets, whose order varies from run to run
+        for (a, b), w in sorted(deps.items()):
             p, q = pos[a], pos[b]
             start, end = boundary(p, q), boundary(q, p)
             arrow = FancyArrowPatch(start, end, arrowstyle="-|>", mutation_scale=11, lw=0.9, color="#333",
@@ -496,7 +497,8 @@ def draw(kdeps, knodes, mdeps, mnodes, path):
         kpos[n] = (i * 1.5 - 3, 4.5)
     graph(axes[1], kdeps, knodes, kpos, "(b) Kendrick: entity references", 0.0)
     fig.tight_layout()
-    fig.savefig(path)
+    # no creation date in the PDF, so that a rerun on unchanged models leaves the file unchanged
+    fig.savefig(path, metadata={"CreationDate": None})
     plt.close(fig)
 
 
