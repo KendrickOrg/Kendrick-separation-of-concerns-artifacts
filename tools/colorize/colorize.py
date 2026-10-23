@@ -33,7 +33,7 @@ COLORS = {
 K_KEYWORDS = {
     "KModel", "Composition", "Scenario", "Simulation", "Visualization",
     "attribute:", "parameters:", "equations:", "transitions:", "connectionMatrix:",
-    "topology:", "ring", "line", "complete", "oneWay", "twoWay", "entry:",
+    "topology:", "ring", "line", "complete", "oneWay", "twoWay", "entry:", "inherited",
     "transitionRate:", "model:", "on:", "var:", "sum_", "in", "range",
     "solver:", "scenario:", "from:", "to:", "step:",
     "plot:", "for:", "data:", "legendTitle:", "legends:", "xLabel:",
