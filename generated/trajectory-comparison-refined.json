@@ -1,0 +1,51 @@
+{
+ "step": 0.1,
+ "Model1": {
+  "compartments_compared": 4,
+  "max_relative_deviation": 7.056919713632108e-09,
+  "worst_compartment": "E",
+  "worst_detail": {
+   "absolute": 1.7789483173658027e-05,
+   "peak": 2520.85667622,
+   "day": 1.0
+  },
+  "aggregated_max_relative_deviation": 7.056919713632108e-09,
+  "aggregated_worst_series": "E"
+ },
+ "Model2": {
+  "compartments_compared": 8,
+  "max_relative_deviation": 7.056919713632108e-09,
+  "worst_compartment": "E_birds",
+  "worst_detail": {
+   "absolute": 1.7789483173658027e-05,
+   "peak": 2520.85667622,
+   "day": 1.0
+  },
+  "aggregated_max_relative_deviation": 7.056919713632108e-09,
+  "aggregated_worst_series": "E_birds"
+ },
+ "Model3": {
+  "compartments_compared": 120,
+  "max_relative_deviation": 2.43567195329262e-08,
+  "worst_compartment": "E_birds_15",
+  "worst_detail": {
+   "absolute": 5.6762368558338494e-05,
+   "peak": 2330.46032663,
+   "day": 62.0
+  },
+  "aggregated_max_relative_deviation": 6.826485617836037e-09,
+  "aggregated_worst_series": "E_birds"
+ },
+ "Model4": {
+  "compartments_compared": 180,
+  "max_relative_deviation": 1.6465020809851077e-07,
+  "worst_compartment": "E_birds_1_free",
+  "worst_detail": {
+   "absolute": 3.347061684522146e-05,
+   "peak": 203.283173655,
+   "day": 1.0
+  },
+  "aggregated_max_relative_deviation": 8.572978051597754e-09,
+  "aggregated_worst_series": "E_birds"
+ }
+}

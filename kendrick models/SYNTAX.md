@@ -51,7 +51,7 @@ implementation and the wiki still use the older spelling (`KendrickModel`, `attr
 
 ## Simulation and Visualization
 
-- `Simulation`: `solver:` is `'rungeKutta'`, `'gillespie'` or `'tauLeap'`; `from:`, `to:`, `step:` in days
+- `Simulation`: `solver:` is `'rungeKutta'`, `'gillespie'`, `'nextReaction'` (Anderson's method, for rates that read `t`) or `'tauLeap'`; `from:`, `to:`, `step:` in days
   (for the stochastic solvers, `step:` is the sampling step of the trajectory); optional `runs:` and `seed:`.
 - `Visualization`: `plot: 'diagram'`, `for:` a Simulation, `data: #(<name> ...)`, `legendTitle:`, `legends:`
   (renames the series in order), `xLabel:`, `yLabel:`, `title:`. A data name starts with an attribute value and

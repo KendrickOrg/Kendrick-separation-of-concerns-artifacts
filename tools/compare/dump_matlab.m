@@ -93,6 +93,9 @@ if ~exist(outdir, 'dir')
   mkdir(outdir);
 end
 printf('GNU Octave %s\n', version());
+fid = fopen(fullfile(outdir, 'octave-version.txt'), 'w');   % recorded with the trajectories, read by compare.py
+fprintf(fid, 'GNU Octave %s\n', version());
+fclose(fid);
 for k = 1:4
   run_model(k, fullfile(root, 'matlab models', sprintf('M%d', k)), '', fullfile(outdir, sprintf('M%d.csv', k)));
 end

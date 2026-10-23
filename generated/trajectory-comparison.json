@@ -1,4 +1,5 @@
 {
+ "octave_version": "GNU Octave 11.3.0",
  "Model1": {
   "compartments_compared": 4,
   "compartments_only_in_kendrick": 0,

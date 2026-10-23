@@ -4,8 +4,9 @@ This repository holds everything needed to reproduce the measurements and the nu
 paper, submitted to Software and Systems Modeling (SoSyM): the models in the three languages, the scripts
 that compute the metrics of Section 5 and compare the trajectories of Section 4.5, and their outputs.
 The reference implementation of the Kendrick language is a separate repository,
-https://github.com/KendrickOrg/JKendrick; the results of the paper were obtained with its release v0.2.1, archived at
-https://doi.org/10.5281/zenodo.23590968. This repository is archived at https://doi.org/10.5281/zenodo.23598338 (release v1.0.2).
+https://github.com/KendrickOrg/JKendrick; the results of the paper were obtained with its release v0.2.2, archived at
+https://doi.org/10.5281/zenodo.23601380 (v0.2.1 was https://doi.org/10.5281/zenodo.23590968). This repository is
+archived at https://doi.org/10.5281/zenodo.23598338 (release v1.0.2).
 
 ## Contents
 
@@ -31,8 +32,11 @@ https://doi.org/10.5281/zenodo.23590968. This repository is archived at https://
   shared with `tools/colorize/colorize.py`, which draws Figures 3 and 4.
 - `tools/compare/`: `dump_matlab.m` runs the MATLAB models under Octave (ode45, RelTol 1e-8, one point per
   day); `compare.py` compares them compartment by compartment with the trajectories written by JKendrick
-  and writes `generated/trajectory-comparison.json` (Section 4.5); `compare_algebraicpetri.py [3|4]` does
-  the same for the AlgebraicPetri models (Sections 5.3 and 5.5.3).
+  and writes `generated/trajectory-comparison.json` (Section 4.5); `refine.py` reruns the four Kendrick
+  models with a step of a tenth of a day and writes `generated/trajectory-comparison-refined.json` (the
+  step-refinement check of Section 4.5); `compare_algebraicpetri.py [3|4]` does the same for the
+  AlgebraicPetri models (Sections 5.3 and 5.5.3). `dump_matlab.m` records the Octave version in
+  `generated/matlab-trajectories/octave-version.txt`, which `compare.py` copies into its output.
 - `generated/`: the outputs. The tables of Section 5 (`scattering.tex`, `scattering3.tex`, `size-metrics.tex`,
   `dependency-metrics.tex`, `change-effort.tex`), `metrics.json` (every number, with the attribution of each
   statement), `trajectory-comparison.json`, and the trajectories of every model in every language
@@ -44,17 +48,18 @@ https://doi.org/10.5281/zenodo.23590968. This repository is archived at https://
 
 ## Reproducing
 
-Prerequisites: Python 3 with `matplotlib`; a JDK 17+ and Maven for JKendrick; GNU Octave for the MATLAB
+Prerequisites: Python 3 with `matplotlib`; a JDK 23 (the release of JKendrick's `pom.xml`) and Maven for JKendrick; GNU Octave for the MATLAB
 trajectories; Julia 1.9+ for AlgebraicPetri; `playwright` with `playwright install chromium` for the
 colorized figures only. On Windows, Octave and Julia are not put on the PATH by their installers.
 
     git clone https://github.com/KendrickOrg/Kendrick-separation-of-concerns-artifacts.git artifacts
     git clone https://github.com/KendrickOrg/JKendrick.git
-    cd JKendrick && git checkout v0.2.1 && mvn package && cd ../artifacts     # target/jkendrick.jar, the tests
+    cd JKendrick && git checkout v0.2.2 && mvn package && cd ../artifacts     # target/jkendrick.jar, the tests
     python tools/metrics/metrics.py                       # generated/*.tex, metrics.json, figures/dependency-graph.pdf
     for k in 1 2 3 4; do java -cp ../JKendrick/target/jkendrick.jar jKendrick.Kendrick "kendrick models/Model$k.st" --csv generated/kendrick-trajectories/Model$k.csv; done
     octave-cli tools/compare/dump_matlab.m                # generated/matlab-trajectories/M1..M4.csv
     python tools/compare/compare.py                       # generated/trajectory-comparison.json (Section 4.5)
+    python tools/compare/refine.py                        # generated/trajectory-comparison-refined.json (Section 4.5)
     julia --project="algebraicpetri models" -e "using Pkg; Pkg.instantiate()"   # once
     julia --project="algebraicpetri models" "algebraicpetri models/model3.jl"       # generated/algebraicpetri-trajectories/Model3.csv
     julia --project="algebraicpetri models" "algebraicpetri models/model4/model4.jl"   # generated/algebraicpetri-trajectories/Model4.csv

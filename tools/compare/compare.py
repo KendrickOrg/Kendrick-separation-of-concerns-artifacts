@@ -104,6 +104,10 @@ def compare(k, matlab_file=None):
 
 def main():
     result = {}
+    version_file = os.path.join(MDIR, "octave-version.txt")   # written by dump_matlab.m
+    if os.path.exists(version_file):
+        with open(version_file) as f:
+            result["octave_version"] = f.read().strip()
     runs = [(1, None), (2, None), (3, None), (4, None)]
     for k, variant in runs:
         r = compare(k, variant)
