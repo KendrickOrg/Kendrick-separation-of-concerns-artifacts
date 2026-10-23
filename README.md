@@ -6,7 +6,8 @@ that compute the metrics of Section 5 and compare the trajectories of Section 4.
 The reference implementation of the Kendrick language is a separate repository,
 https://github.com/KendrickOrg/JKendrick; the results of the paper were obtained with its release v0.2.3, archived at
 https://doi.org/10.5281/zenodo.23602490 (v0.2.2 was https://doi.org/10.5281/zenodo.23601380, v0.2.1 was https://doi.org/10.5281/zenodo.23590968). This repository is
-archived at https://doi.org/10.5281/zenodo.23602638 (release v1.0.4; v1.0.3 was https://doi.org/10.5281/zenodo.23601588, v1.0.2 was https://doi.org/10.5281/zenodo.23598338).
+archived on Zenodo at https://doi.org/10.5281/zenodo.23588339, a DOI that always resolves to the latest
+release; the record lists every release with its own DOI.
 
 ## Contents
 
