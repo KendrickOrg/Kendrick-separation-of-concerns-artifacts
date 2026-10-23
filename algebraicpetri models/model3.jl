@@ -4,9 +4,9 @@
 #
 #     julia --project="algebraicpetri models" "algebraicpetri models/model3.jl"      (from the root of the repository)
 #
-# Petri nets are mass-action: the force of infection beta*I/N and the births mu*N are encoded with the
-# population N of each zone and species folded into the rate constants, which is exact here because
-# every local population is stationary (births balance deaths and the ring is balanced).
+# A rate is a constant or a function of the state and the time, which the vector field multiplies by
+# the mass-action product of the inputs: the force of infection beta*I/N and the births mu*N read the
+# current population N of their zone and species from the state, as the Kendrick version does.
 include("seirs.jl")
 include("species.jl")
 include("ring.jl")
@@ -25,30 +25,38 @@ sigma = Dict(:humans => 0.5, :birds => 0.67)
 gamma = Dict(:humans => 0.25, :birds => 0.233)
 nu = 0.00274
 rho = Dict(:humans => 0.03, :birds => 0.1)
-N0 = Dict(:humans => 5000.0, :birds => 50000.0)             # population of each zone and species, stationary
+N0 = Dict(:humans => 5000.0, :birds => 50000.0)             # population of each zone and species at time 0
 
-# The species of a transition, read on its first input place, or on its first output place for a birth:
-# the reflexive transitions that add_reflexives creates are all named by their kind, so the species
-# can only be read on the place.
-function species_of(t)
+# The places of each species and zone, and the current population of that sub-population read from u
+places = Dict{Tuple{Symbol,Symbol},Vector{Int}}()
+for s in 1:ns(net)
+    status, k, z = sname(net, s)
+    push!(get!(places, (k, z), Int[]), s)
+end
+population(k, z) = let idx = places[(k, z)]; u -> sum(u[ix] for ix in idx) end
+
+# A place of a transition, its first input, or its first output for a birth, whose label gives the
+# status, the species and the zone of the individual: the reflexive transitions that with_reflexives
+# creates are all named by their kind, so these can only be read on the place.
+function place_of(t)
     ins = incident(net, t, :it)
     place = isempty(ins) ? net[first(incident(net, t, :ot)), :os] : net[first(ins), :is]
-    sname(net, place)[2]
+    sname(net, place)
 end
 
 function rate(t)
-    d, k, z = tname(net, t)             # the SEIRS, species and ring components of the transition
-    s = species_of(t)
-    d == :infection && return beta[k] / N0[infectious_of[k]]
+    d, k, _ = tname(net, t)             # the SEIRS, species and ring components of the transition
+    status, s, z = place_of(t)
+    d == :infection && return let i = infectious_of[k], N = population(i, z); (u, t) -> beta[k] / N(u) end
     d == :incubation && return sigma[s]
     d == :recovery && return gamma[s]
     d == :loss && return nu
-    d == :birth && return mu[s] * N0[s]
+    d == :birth && return let N = population(s, z); (u, t) -> mu[s] * N(u) end
     startswith(String(d), "death") && return mu[s]
     startswith(String(d), "strata") && return rho[s]
     error("no rate for $(tname(net, t))")
 end
-p = [rate(t) for t in 1:nt(net)]
+p = Any[rate(t) for t in 1:nt(net)]
 
 # ---- initial state: 5000 humans and 50000 birds per zone, 100 infectious birds in zone 1
 function initial(label)

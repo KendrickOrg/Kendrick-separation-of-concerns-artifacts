@@ -451,10 +451,10 @@
     "avg": 437.8
    },
    "algebraicpetri": {
-    "loc": 106,
-    "chars": 3182,
+    "loc": 117,
+    "chars": 3489,
     "entities": 5,
-    "avg": 636.4
+    "avg": 697.8
    }
   },
   "traces": {
@@ -523,22 +523,22 @@
    "algebraicpetri": {
     "concerns": {
      "SEIRS": {
-      "statements": 31,
+      "statements": 33,
       "chunks": 10,
       "entities": 2,
-      "share": 29.2
+      "share": 28.2
      },
      "MultiSpecies": {
-      "statements": 21,
-      "chunks": 10,
-      "entities": 2,
-      "share": 19.8
-     },
-     "MetaPopulation": {
       "statements": 22,
       "chunks": 13,
       "entities": 2,
-      "share": 20.8
+      "share": 18.8
+     },
+     "MetaPopulation": {
+      "statements": 26,
+      "chunks": 15,
+      "entities": 2,
+      "share": 22.2
      },
      "Isolation": {
       "statements": 0,
@@ -547,37 +547,73 @@
       "share": 0.0
      }
     },
-    "statements": 106,
-    "mixed": 12,
-    "mixed_share": 11.3
+    "statements": 117,
+    "mixed": 17,
+    "mixed_share": 14.5
    }
   },
   "algebraicpetri": {
    "dependencies": {
-    "MetaPopulation -> MultiSpecies": 10,
-    "MetaPopulation -> SEIRS": 4,
-    "MultiSpecies -> MetaPopulation": 9,
-    "MultiSpecies -> SEIRS": 10,
-    "SEIRS -> MetaPopulation": 5,
-    "SEIRS -> MultiSpecies": 14
+    "MetaPopulation -> MultiSpecies": 16,
+    "MetaPopulation -> SEIRS": 10,
+    "MultiSpecies -> MetaPopulation": 15,
+    "MultiSpecies -> SEIRS": 11,
+    "SEIRS -> MetaPopulation": 10,
+    "SEIRS -> MultiSpecies": 15
    },
    "coupling": {
     "SEIRS": {
-     "Ca": 14,
-     "Ce": 19,
-     "I": 0.58
+     "Ca": 21,
+     "Ce": 25,
+     "I": 0.54
     },
     "MultiSpecies": {
-     "Ca": 24,
-     "Ce": 19,
-     "I": 0.44
+     "Ca": 31,
+     "Ce": 26,
+     "I": 0.46
     },
     "MetaPopulation": {
-     "Ca": 14,
-     "Ce": 14,
-     "I": 0.5
+     "Ca": 25,
+     "Ce": 26,
+     "I": 0.51
     }
    }
+  }
+ },
+ "algebraicpetri_step": {
+  "sizes": {
+   "model3": {
+    "loc": 117,
+    "chars": 3489,
+    "entities": 5,
+    "avg": 697.8
+   },
+   "model4": {
+    "loc": 141,
+    "chars": 4357,
+    "entities": 6,
+    "avg": 726.2
+   }
+  },
+  "effort": {
+   "changed_entities": 2,
+   "added_entities": 1,
+   "reused_entities": 3,
+   "changed_lines": 12,
+   "added_lines": 24,
+   "deleted_lines": 0,
+   "changed": [
+    "ontology.jl",
+    "assembly"
+   ],
+   "added": [
+    "isolation.jl"
+   ],
+   "reused": [
+    "seirs.jl",
+    "species.jl",
+    "ring.jl"
+   ]
   }
  }
 }

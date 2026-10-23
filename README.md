@@ -17,9 +17,13 @@ https://doi.org/10.5281/zenodo.23590968. This repository is archived at https://
   `M4` is the corrected version of Section 4.5 (the ODE function recomputes `N` from the current compartments).
 - `algebraicpetri models/`: Model 3 in AlgebraicPetri (Julia): `ontology.jl` (the type system, with
   births and deaths added), `seirs.jl`, `species.jl`, `ring.jl` (one typed Petri net per concern) and
-  `model3.jl` (typed product, rates, initial state, integration, trajectory). `model4/` is the isolation
-  step applied to these files (Section 5.5.3): `isolation.jl` is the new concern, the ontology gains the
-  event kind `isolate`, every other concern declares it, `model4.jl` is the assembly.
+  `model3.jl` (typed product, rates as functions of the state, initial state, integration, trajectory);
+  the reflexive transitions of each net are computed from the ontology by `with_reflexives` (ontology.jl).
+  `model4/` is the isolation step applied to these files (Section 5.5.3): `isolation.jl` is the new
+  concern, the ontology gains the event kind `isolate`, the three other concern nets are unchanged,
+  `model4.jl` is the assembly; the step changes 12 statements and adds 24, from 117 to 141
+  (`metrics.json`, key `algebraicpetri_step`). Model 3 agrees with the Kendrick trajectory to 2.6e-4 and
+  Model 4 to 4.2e-3 of the peak (`compare_algebraicpetri.py`).
   `Project.toml` and `Manifest.toml` pin the package versions.
 - `tools/metrics/metrics.py`: computes every number of Section 5 (traces, scattering, dependencies, change
   scope) from the model sources and writes `generated/*.tex`, `generated/metrics.json` and

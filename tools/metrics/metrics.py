@@ -57,6 +57,9 @@ OUT = ROOT / "generated"
 MODELS = [1, 2, 3, 4]
 M_FILES = ["SEIRSInfluenza.m", "modelODEs.m", "resolve.m", "visualization.m"]
 J_FILES = ["ontology.jl", "seirs.jl", "species.jl", "ring.jl", "model3.jl"]
+# the isolation step S3 applied to the AlgebraicPetri files: the model4 folder, whose assembly is model4.jl
+J4_FILES = ["ontology.jl", "seirs.jl", "species.jl", "ring.jl", "isolation.jl", "model4.jl"]
+J_ASSEMBLY = {"model3.jl": "assembly", "model4.jl": "assembly"}   # one entity name across the step
 TABLES = {"kendrick": K_CONCERNS, "matlab": M_CONCERNS, "julia": J_CONCERNS}
 
 IDENT = re.compile(r"[A-Za-z][A-Za-z0-9_]*")
@@ -97,11 +100,11 @@ def kendrick_entities(text):
     return entities
 
 
-def julia_entities(folder):
+def julia_entities(folder, files=J_FILES):
     entities = OrderedDict()
-    for f in J_FILES:
+    for f in files:
         text = (folder / f).read_text(encoding="utf-8").replace("\r\n", "\n")
-        entities[f] = ("file", loc(text, "julia"))
+        entities[J_ASSEMBLY.get(f, f)] = ("file", loc(text, "julia"))
     return entities
 
 
@@ -524,6 +527,9 @@ def main():
     jnodes = [c for c in J_CONCERNS if any(c in e for e in jdeps)]
     jc = coupling(jnodes, jdeps)
     (OUT / "scattering3.tex").write_text(tex_traces3(kt3, mt3, jt3), encoding="utf-8")
+    # the isolation step S3 in AlgebraicPetri: Model 3 folder -> model4 folder, with the assembly matched by role
+    j4 = julia_entities(JDIR / "model4", J4_FILES)
+    jeffort = effort(j3, j4)
 
     (OUT / "size-metrics.tex").write_text(tex_size(sizes), encoding="utf-8")
     (OUT / "change-effort.tex").write_text(tex_effort(efforts), encoding="utf-8")
@@ -538,6 +544,7 @@ def main():
         "model3": {"sizes": {"kendrick": size(k3), "matlab": size(m3), "algebraicpetri": size(j3)},
                    "traces": {"kendrick": kt3, "matlab": mt3, "algebraicpetri": jt3},
                    "algebraicpetri": {"dependencies": {f"{a} -> {b}": v for (a, b), v in sorted(jdeps.items())}, "coupling": jc}},
+        "algebraicpetri_step": {"sizes": {"model3": size(j3), "model4": size(j4)}, "effort": jeffort},
     }
     (OUT / "metrics.json").write_text(json.dumps(result, indent=1), encoding="utf-8")
     print(json.dumps(result, indent=1))

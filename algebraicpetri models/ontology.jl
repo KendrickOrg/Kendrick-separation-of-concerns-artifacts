@@ -12,3 +12,13 @@ const ontology = LabelledPetriNet(
     :birth => (() => :Pop),
     :death => (:Pop => ()),
 )
+
+# The kinds of events of the ontology that a concern does not describe itself happen within each of
+# its states: with_reflexives adds them as reflexive transitions, computed from the ontology, so that
+# a concern need not list the kinds of events of the other concerns and is unchanged when a kind is
+# added to the ontology.
+function with_reflexives(typed, ontology)
+    used = Set(tname(ontology, ix) for ix in collect(typed[:T]))
+    others = [kind for kind in tnames(ontology) if kind ∉ used]
+    add_reflexives(typed, [others for _ in 1:ns(dom(typed))], ontology)
+end

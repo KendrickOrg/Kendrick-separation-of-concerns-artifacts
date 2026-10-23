@@ -6,10 +6,10 @@
 #
 #     julia --project="algebraicpetri models" "algebraicpetri models/model4/model4.jl"      (from the root of the repository)
 #
-# Petri nets are mass-action: the force of infection beta*I/N and the births mu*N are encoded with the
-# population N of each zone and species folded into the rate constants. Model 4 makes this an
-# approximation: isolated individuals do not migrate, so the local populations drift, and the Kendrick
-# version divides by the current N_ip - I_ip_isolated.
+# A rate is a constant or a function of the state and the time, which the vector field multiplies by
+# the mass-action product of the inputs: the force of infection divides by the current mixing
+# population of its zone and species, N_ip - I_ip_isolated, and the births read the current population,
+# as the Kendrick version does.
 include("seirs.jl")
 include("species.jl")
 include("ring.jl")
@@ -33,9 +33,21 @@ delta = 0.2                                                   # isolation of the
 epsilon = 1.0                                                 # release of the recovered
 N0 = Dict(:humans => 5000.0, :birds => 50000.0)             # population of each zone and species at time 0
 
+# The places of each species and zone (free and isolated), the isolated infectious among them, and the
+# current population and mixing population of that sub-population read from u
+places = Dict{Tuple{Symbol,Symbol},Vector{Int}}()
+isolated_infectious = Dict{Tuple{Symbol,Symbol},Int}()
+for s in 1:ns(net)
+    status, k, z, iso = sname(net, s)
+    push!(get!(places, (k, z), Int[]), s)
+    status == :I && iso == :isolated && (isolated_infectious[(k, z)] = s)
+end
+population(k, z) = let idx = places[(k, z)]; u -> sum(u[ix] for ix in idx) end
+mixing(k, z) = let N = population(k, z), q = isolated_infectious[(k, z)]; u -> N(u) - u[q] end
+
 # A place of a transition, its first input, or its first output for a birth, whose label gives the
-# status, the species and the isolation status of the individual: the reflexive transitions that
-# add_reflexives creates are all named by their kind, so these can only be read on the place.
+# status, the species, the zone and the isolation status of the individual: the reflexive transitions
+# that with_reflexives creates are all named by their kind, so these can only be read on the place.
 function place_of(t)
     ins = incident(net, t, :it)
     place = isempty(ins) ? net[first(incident(net, t, :ot)), :os] : net[first(ins), :is]
@@ -43,20 +55,20 @@ function place_of(t)
 end
 
 function rate(t)
-    d, k, z, q = tname(net, t)          # the SEIRS, species, ring and isolation components of the transition
-    status, s, _, iso = place_of(t)
-    d == :infection && return beta[k] / N0[infectious_of[k]]
+    d, k, _, q = tname(net, t)          # the SEIRS, species, ring and isolation components of the transition
+    status, s, z, iso = place_of(t)
+    d == :infection && return let i = infectious_of[k], M = mixing(i, z); (u, t) -> beta[k] / M(u) end
     d == :incubation && return sigma[s]
     d == :recovery && return gamma[s]
     d == :loss && return iso == :free ? nu : 0.0                 # isolated individuals keep their immunity
-    d == :birth && return mu[s] * N0[s]
+    d == :birth && return let N = population(s, z); (u, t) -> mu[s] * N(u) end
     startswith(String(d), "death") && return mu[s]
     startswith(String(d), "strata") && return rho[s]
     d == :isolate && q == :isolation && return status == :I ? delta : 0.0
     d == :isolate && q == :release && return status == :R ? epsilon : 0.0
     error("no rate for $(tname(net, t))")
 end
-p = [rate(t) for t in 1:nt(net)]
+p = Any[rate(t) for t in 1:nt(net)]
 
 # ---- initial state: 5000 humans and 50000 birds per zone, all free, 100 infectious birds in zone 1
 function initial(label)
