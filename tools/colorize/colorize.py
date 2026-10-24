@@ -61,7 +61,7 @@ J_CONCERNS = {
     "SEIRS": ["S", "E", "I", "R", "seirs", "seirs_uwd", "infection", "incubation", "recovery", "loss",
               "death_S", "death_E", "death_I", "death_R", "beta", "sigma", "gamma", "nu", "mu", "status", "d"],
     "MultiSpecies": ["humans", "birds", "species", "species_uwd", "infect_BB", "infect_HB", "disease_H", "disease_B",
-                     "strata_H", "strata_B", "birth_H", "birth_B", "death_H", "death_B", "species_of", "infectious_of", "k"],
+                     "strata_H", "strata_B", "birth_H", "birth_B", "death_H", "death_B", "species_of", "infectious_of", "k", "ki"],
     "MetaPopulation": ["ring_model", "zones", "zone", "zone1", "migration", "np", "rho", "n", "i", "j", "z"],
     "Isolation": [],
 }

@@ -254,6 +254,24 @@ def matlab_dependencies(entities, table=M_CONCERNS):
     return deps
 
 
+def kendrick_table(entities):
+    """The attribution of a Kendrick script, computed from its declarations: each KModel owns its name, its
+    attribute, the attribute's values and its parameters, and an index variable of the Scenario belongs to the
+    concern of the attribute it ranges over. The table that the colorizer shares (K_CONCERNS) must agree."""
+    decl = kendrick_declarations(entities)
+    kinds = {name: kind for name, (kind, _) in entities.items()}
+    table = {c: set(names) for c, names in decl.items() if kinds[c] == "KModel"}
+    for name, (kind, lines) in entities.items():
+        if kind == "Scenario":
+            for var, attr in re.findall(r"\(\s*(\w)\s+in\s+(\w+)\s*\)", "\n".join(lines)):
+                for c, names in table.items():
+                    if attr in names:
+                        names.add(var)
+    for c, names in table.items():
+        assert names == set(K_CONCERNS[c]), (c, sorted(names ^ set(K_CONCERNS[c])))
+    return {c: sorted(names) for c, names in table.items()}
+
+
 def concern_tokens(line, lang):
     """The concerns mentioned by a statement, one entry per identifier occurrence."""
     lookup = {}
@@ -517,14 +535,14 @@ def main():
     knodes = list(k4.keys())
     mnodes = [c for c in M_CONCERNS if any(c in e for e in mdeps)]
     kc, mc = coupling(knodes, kdeps), coupling(mnodes, mdeps)
-    kt, mt = traces(k4, "kendrick"), traces(m4, "matlab")
+    kt, mt = traces_with(k4, "kendrick", kendrick_table(k4)), traces(m4, "matlab")
     (OUT / "scattering.tex").write_text(tex_traces(kt, mt), encoding="utf-8")
     mt_without = traces_with(m4, "matlab", M_CONCERNS_WITHOUT_DIMENSIONS)
     (OUT / "attribution-sensitivity.tex").write_text(tex_sensitivity(mt, mt_without), encoding="utf-8")
     # Model 3 in the three languages (the AlgebraicPetri version exists for Model 3 only)
     k3, m3 = models[3]
     j3 = julia_entities(JDIR)
-    kt3, mt3, jt3 = traces(k3, "kendrick"), traces(m3, "matlab"), traces(j3, "julia")
+    kt3, mt3, jt3 = traces_with(k3, "kendrick", kendrick_table(k3)), traces(m3, "matlab"), traces(j3, "julia")
     jdeps = matlab_dependencies(j3, J_CONCERNS)
     jnodes = [c for c in J_CONCERNS if any(c in e for e in jdeps)]
     jc = coupling(jnodes, jdeps)

@@ -57,7 +57,7 @@ end
 function rate(t)
     d, k, _, q = tname(net, t)          # the SEIRS, species, ring and isolation components of the transition
     status, s, z, iso = place_of(t)
-    d == :infection && return let i = infectious_of[k], M = mixing(i, z); (u, t) -> beta[k] / M(u) end
+    d == :infection && return let ki = infectious_of[k], M = mixing(ki, z); (u, t) -> beta[k] / M(u) end
     d == :incubation && return sigma[s]
     d == :recovery && return gamma[s]
     d == :loss && return iso == :free ? nu : 0.0                 # isolated individuals keep their immunity
@@ -92,8 +92,8 @@ out = joinpath(@__DIR__, "..", "..", "generated", "algebraicpetri-trajectories")
 mkpath(out)
 open(joinpath(out, "Model4.csv"), "w") do f
     println(f, "t,", join([name(sname(net, s)) for s in 1:ns(net)], ","))
-    for (i, t) in enumerate(sol.t)
-        println(f, t, ",", join(sol.u[i], ","))
+    for (row, t) in enumerate(sol.t)
+        println(f, t, ",", join(sol.u[row], ","))
     end
 end
 println("written ", joinpath(out, "Model4.csv"))

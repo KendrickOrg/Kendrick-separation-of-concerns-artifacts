@@ -37,9 +37,9 @@
    },
    "matlab": {
     "loc": 67,
-    "chars": 1751,
+    "chars": 1729,
     "entities": 4,
-    "avg": 437.8
+    "avg": 432.2
    }
   },
   "4": {
@@ -51,9 +51,9 @@
    },
    "matlab": {
     "loc": 80,
-    "chars": 2258,
+    "chars": 2236,
     "entities": 4,
-    "avg": 564.5
+    "avg": 559.0
    }
   }
  },
@@ -310,28 +310,28 @@
    "Isolation -> SEIRS": 45,
    "MetaPopulation -> Isolation": 22,
    "MetaPopulation -> MultiSpecies": 75,
-   "MetaPopulation -> SEIRS": 86,
+   "MetaPopulation -> SEIRS": 81,
    "MultiSpecies -> Isolation": 19,
-   "MultiSpecies -> MetaPopulation": 81,
-   "MultiSpecies -> SEIRS": 52,
+   "MultiSpecies -> MetaPopulation": 80,
+   "MultiSpecies -> SEIRS": 47,
    "SEIRS -> Isolation": 23,
-   "SEIRS -> MetaPopulation": 56,
-   "SEIRS -> MultiSpecies": 50
+   "SEIRS -> MetaPopulation": 54,
+   "SEIRS -> MultiSpecies": 49
   },
   "coupling": {
    "SEIRS": {
-    "Ca": 183,
-    "Ce": 129,
-    "I": 0.41
+    "Ca": 173,
+    "Ce": 126,
+    "I": 0.42
    },
    "MultiSpecies": {
-    "Ca": 142,
-    "Ce": 152,
-    "I": 0.52
+    "Ca": 141,
+    "Ce": 146,
+    "I": 0.51
    },
    "MetaPopulation": {
-    "Ca": 161,
-    "Ce": 183,
+    "Ca": 158,
+    "Ce": 178,
     "I": 0.53
    },
    "Isolation": {
@@ -376,10 +376,10 @@
   "matlab": {
    "concerns": {
     "SEIRS": {
-     "statements": 40,
-     "chunks": 13,
-     "entities": 3,
-     "share": 50.0
+     "statements": 39,
+     "chunks": 12,
+     "entities": 2,
+     "share": 48.8
     },
     "MultiSpecies": {
      "statements": 47,
@@ -407,10 +407,10 @@
   "matlab_without_dimensions": {
    "concerns": {
     "SEIRS": {
-     "statements": 40,
-     "chunks": 13,
-     "entities": 3,
-     "share": 50.0
+     "statements": 39,
+     "chunks": 12,
+     "entities": 2,
+     "share": 48.8
     },
     "MultiSpecies": {
      "statements": 1,
@@ -419,10 +419,10 @@
      "share": 1.2
     },
     "MetaPopulation": {
-     "statements": 17,
-     "chunks": 7,
-     "entities": 3,
-     "share": 21.2
+     "statements": 16,
+     "chunks": 6,
+     "entities": 2,
+     "share": 20.0
     },
     "Isolation": {
      "statements": 20,
@@ -432,8 +432,8 @@
     }
    },
    "statements": 80,
-   "mixed": 17,
-   "mixed_share": 21.2
+   "mixed": 16,
+   "mixed_share": 20.0
   }
  },
  "model3": {
@@ -446,15 +446,15 @@
    },
    "matlab": {
     "loc": 67,
-    "chars": 1751,
+    "chars": 1729,
     "entities": 4,
-    "avg": 437.8
+    "avg": 432.2
    },
    "algebraicpetri": {
     "loc": 117,
-    "chars": 3489,
+    "chars": 3495,
     "entities": 5,
-    "avg": 697.8
+    "avg": 699.0
    }
   },
   "traces": {
@@ -492,10 +492,10 @@
    "matlab": {
     "concerns": {
      "SEIRS": {
-      "statements": 37,
-      "chunks": 9,
-      "entities": 3,
-      "share": 55.2
+      "statements": 36,
+      "chunks": 8,
+      "entities": 2,
+      "share": 53.7
      },
      "MultiSpecies": {
       "statements": 37,
@@ -535,10 +535,10 @@
       "share": 18.8
      },
      "MetaPopulation": {
-      "statements": 26,
-      "chunks": 15,
+      "statements": 24,
+      "chunks": 14,
       "entities": 2,
-      "share": 22.2
+      "share": 20.5
      },
      "Isolation": {
       "statements": 0,
@@ -554,12 +554,12 @@
   },
   "algebraicpetri": {
    "dependencies": {
-    "MetaPopulation -> MultiSpecies": 16,
+    "MetaPopulation -> MultiSpecies": 18,
     "MetaPopulation -> SEIRS": 10,
-    "MultiSpecies -> MetaPopulation": 15,
+    "MultiSpecies -> MetaPopulation": 13,
     "MultiSpecies -> SEIRS": 11,
-    "SEIRS -> MetaPopulation": 10,
-    "SEIRS -> MultiSpecies": 15
+    "SEIRS -> MetaPopulation": 8,
+    "SEIRS -> MultiSpecies": 17
    },
    "coupling": {
     "SEIRS": {
@@ -568,14 +568,14 @@
      "I": 0.54
     },
     "MultiSpecies": {
-     "Ca": 31,
-     "Ce": 26,
-     "I": 0.46
+     "Ca": 35,
+     "Ce": 24,
+     "I": 0.41
     },
     "MetaPopulation": {
-     "Ca": 25,
-     "Ce": 26,
-     "I": 0.51
+     "Ca": 21,
+     "Ce": 28,
+     "I": 0.57
     }
    }
   }
@@ -584,15 +584,15 @@
   "sizes": {
    "model3": {
     "loc": 117,
-    "chars": 3489,
+    "chars": 3495,
     "entities": 5,
-    "avg": 697.8
+    "avg": 699.0
    },
    "model4": {
     "loc": 141,
-    "chars": 4357,
+    "chars": 4363,
     "entities": 6,
-    "avg": 726.2
+    "avg": 727.2
    }
   },
   "effort": {
