@@ -17,6 +17,10 @@ release; the record lists every release with its own DOI.
 - `matlab models/M1` to `M4`: the same four models written by hand in MATLAB, four files each (main
   script `SEIRSInfluenza.m`, `modelODEs.m`, `resolve.m`, `visualization.m`). They run under GNU Octave.
   `M4` is the corrected version of Section 4.5 (the ODE function recomputes `N` from the current compartments).
+  `M4-single-file/Model_4.m` is Model 4 in the layout of Keeling and Rohani's MATLAB programs (Section 6.2):
+  one file, a main function that sets the default parameters, integrates and plots, and a subfunction for
+  the right-hand side that receives the parameters as arguments. `metrics.json` gives its measures under the
+  key `matlab_single_file`; `tools/compare/check_single_file.m` checks that it computes the trajectory of `M4`.
 - `algebraicpetri models/`: Model 3 in AlgebraicPetri (Julia): `ontology.jl` (the type system, with
   births and deaths added), `seirs.jl`, `species.jl`, `ring.jl` (one typed Petri net per concern) and
   `model3.jl` (typed product, rates as functions of the state, initial state, integration, trajectory);
@@ -38,6 +42,8 @@ release; the record lists every release with its own DOI.
   step-refinement check of Section 4.5); `compare_algebraicpetri.py [3|4]` does the same for the
   AlgebraicPetri models (Sections 5.3 and 5.5.3). `dump_matlab.m` records the Octave version in
   `generated/matlab-trajectories/octave-version.txt`, which `compare.py` copies into its output.
+  `check_single_file.m` runs `matlab models/M4-single-file/Model_4.m` and compares its state at day 1500 with
+  that of `M4` (maximum relative difference 4.4e-12).
 - `generated/`: the outputs. The tables of Section 5 (`scattering.tex`, `scattering3.tex`, `size-metrics.tex`,
   `dependency-metrics.tex`, `change-effort.tex`), `metrics.json` (every number, with the attribution of each
   statement), `trajectory-comparison.json`, and the trajectories of every model in every language
@@ -59,6 +65,7 @@ colorized figures only. On Windows, Octave and Julia are not put on the PATH by 
     python tools/metrics/metrics.py                       # generated/*.tex, metrics.json, figures/dependency-graph.pdf
     for k in 1 2 3 4; do java -cp ../JKendrick/target/jkendrick.jar jKendrick.Kendrick "kendrick models/Model$k.st" --csv generated/kendrick-trajectories/Model$k.csv; done
     octave-cli tools/compare/dump_matlab.m                # generated/matlab-trajectories/M1..M4.csv
+    octave-cli tools/compare/check_single_file.m          # Model 4 in one file against M4 (Section 6.2)
     python tools/compare/compare.py                       # generated/trajectory-comparison.json (Section 4.5)
     python tools/compare/refine.py                        # generated/trajectory-comparison-refined.json (Section 4.5)
     julia --project="algebraicpetri models" -e "using Pkg; Pkg.instantiate()"   # once

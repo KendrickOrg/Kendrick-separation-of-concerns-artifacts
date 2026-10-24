@@ -615,5 +615,80 @@
     "ring.jl"
    ]
   }
+ },
+ "matlab_single_file": {
+  "size": {
+   "loc": 66,
+   "chars": 1965,
+   "entities": 2,
+   "avg": 982.5
+  },
+  "traces": {
+   "concerns": {
+    "SEIRS": {
+     "statements": 32,
+     "chunks": 12,
+     "entities": 2,
+     "share": 48.5
+    },
+    "MultiSpecies": {
+     "statements": 37,
+     "chunks": 15,
+     "entities": 2,
+     "share": 56.1
+    },
+    "MetaPopulation": {
+     "statements": 46,
+     "chunks": 14,
+     "entities": 2,
+     "share": 69.7
+    },
+    "Isolation": {
+     "statements": 17,
+     "chunks": 8,
+     "entities": 2,
+     "share": 25.8
+    }
+   },
+   "statements": 66,
+   "mixed": 43,
+   "mixed_share": 65.2
+  },
+  "dependencies": {
+   "Isolation -> MetaPopulation": 24,
+   "Isolation -> MultiSpecies": 16,
+   "Isolation -> SEIRS": 51,
+   "MetaPopulation -> Isolation": 20,
+   "MetaPopulation -> MultiSpecies": 65,
+   "MetaPopulation -> SEIRS": 79,
+   "MultiSpecies -> Isolation": 17,
+   "MultiSpecies -> MetaPopulation": 71,
+   "MultiSpecies -> SEIRS": 45,
+   "SEIRS -> Isolation": 25,
+   "SEIRS -> MetaPopulation": 50,
+   "SEIRS -> MultiSpecies": 44
+  },
+  "coupling": {
+   "SEIRS": {
+    "Ca": 175,
+    "Ce": 119,
+    "I": 0.4
+   },
+   "MultiSpecies": {
+    "Ca": 125,
+    "Ce": 133,
+    "I": 0.52
+   },
+   "MetaPopulation": {
+    "Ca": 145,
+    "Ce": 164,
+    "I": 0.53
+   },
+   "Isolation": {
+    "Ca": 62,
+    "Ce": 91,
+    "I": 0.59
+   }
+  }
  }
 }

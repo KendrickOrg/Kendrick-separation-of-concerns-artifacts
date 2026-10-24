@@ -116,6 +116,20 @@ def matlab_entities(folder):
     return entities
 
 
+def matlab_functions(path):
+    """The functions of a single-file MATLAB program, in file order: the entities of Model 4 written in the
+    layout of Keeling and Rohani's programs (matlab models/M4-single-file)."""
+    entities = OrderedDict()
+    current = None
+    for line in loc(path.read_text(encoding="utf-8").replace("\r\n", "\n"), "matlab"):
+        m = re.match(r"function\s+.*?=\s*(\w+)\s*\(", line)
+        if m:
+            current = m.group(1)
+            entities[current] = ("function", [])
+        entities[current][1].append(line)
+    return entities
+
+
 def load(n):
     k = kendrick_entities((KDIR / f"Model{n}.st").read_text(encoding="utf-8"))
     m = matlab_entities(MDIR / f"M{n}")
@@ -550,6 +564,10 @@ def main():
     # the isolation step S3 in AlgebraicPetri: Model 3 folder -> model4 folder, with the assembly matched by role
     j4 = julia_entities(JDIR / "model4", J4_FILES)
     jeffort = effort(j3, j4)
+    # Model 4 in MATLAB, in the layout of Keeling and Rohani's programs: one file, two functions
+    m4s = matlab_functions(MDIR / "M4-single-file" / "Model_4.m")
+    m4s_deps = matlab_dependencies(m4s)
+    m4s_coupling = coupling([c for c in M_CONCERNS if any(c in e for e in m4s_deps)], m4s_deps)
 
     (OUT / "size-metrics.tex").write_text(tex_size(sizes), encoding="utf-8")
     (OUT / "change-effort.tex").write_text(tex_effort(efforts), encoding="utf-8")
@@ -565,6 +583,9 @@ def main():
                    "traces": {"kendrick": kt3, "matlab": mt3, "algebraicpetri": jt3},
                    "algebraicpetri": {"dependencies": {f"{a} -> {b}": v for (a, b), v in sorted(jdeps.items())}, "coupling": jc}},
         "algebraicpetri_step": {"sizes": {"model3": size(j3), "model4": size(j4)}, "effort": jeffort},
+        "matlab_single_file": {"size": size(m4s), "traces": traces(m4s, "matlab"),
+                               "dependencies": {f"{a} -> {b}": v for (a, b), v in sorted(m4s_deps.items())},
+                               "coupling": m4s_coupling},
     }
     (OUT / "metrics.json").write_text(json.dumps(result, indent=1), encoding="utf-8")
     print(json.dumps(result, indent=1))
