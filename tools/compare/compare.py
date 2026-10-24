@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Compartment-by-compartment comparison of the Kendrick and MATLAB trajectories of Models 1-4
-(Section 4.6 of the paper).
+(Section 4.5 of the paper).
 
     java -cp <JKendrick>/target/jkendrick.jar jKendrick.Kendrick "kendrick models/Model<k>.st" \
          --csv generated/kendrick-trajectories/Model<k>.csv        (k = 1..4; RK4, step 1 day)
