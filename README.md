@@ -4,8 +4,8 @@ This repository holds everything needed to reproduce the measurements and the nu
 paper, submitted to Software and Systems Modeling (SoSyM): the models in the three languages, the scripts
 that compute the metrics of Section 5 and compare the trajectories of Section 4.5, and their outputs.
 The reference implementation of the Kendrick language is a separate repository,
-https://github.com/KendrickOrg/JKendrick; the results of the paper were obtained with its release v0.2.5, archived at
-https://doi.org/10.5281/zenodo.23689100 (v0.2.4 was https://doi.org/10.5281/zenodo.23613533, v0.2.3 was https://doi.org/10.5281/zenodo.23602490, v0.2.2 was https://doi.org/10.5281/zenodo.23601380, v0.2.1 was https://doi.org/10.5281/zenodo.23590968). This repository is
+https://github.com/KendrickOrg/JKendrick; the results of the paper were obtained with its release v0.2.6, archived at
+https://doi.org/10.5281/zenodo.23698850 (v0.2.5 was https://doi.org/10.5281/zenodo.23689100, v0.2.4 was https://doi.org/10.5281/zenodo.23613533, v0.2.3 was https://doi.org/10.5281/zenodo.23602490, v0.2.2 was https://doi.org/10.5281/zenodo.23601380, v0.2.1 was https://doi.org/10.5281/zenodo.23590968). This repository is
 archived on Zenodo at https://doi.org/10.5281/zenodo.23588339, a DOI that always resolves to the latest
 release; the record lists every release with its own DOI.
 
@@ -65,7 +65,7 @@ colorized figures only. On Windows, Octave and Julia are not put on the PATH by 
 
     git clone https://github.com/KendrickOrg/Kendrick-separation-of-concerns-artifacts.git artifacts
     git clone https://github.com/KendrickOrg/JKendrick.git
-    cd JKendrick && git checkout v0.2.5 && mvn package && cd ../artifacts     # target/jkendrick.jar, the tests
+    cd JKendrick && git checkout v0.2.6 && mvn package && cd ../artifacts     # target/jkendrick.jar, the tests
     python tools/metrics/metrics.py                       # generated/*.tex, metrics.json, figures/dependency-graph.pdf
     for k in 1 2 3 4; do java -cp ../JKendrick/target/jkendrick.jar jKendrick.Kendrick "kendrick models/Model$k.st" --csv generated/kendrick-trajectories/Model$k.csv; done
     octave-cli tools/compare/dump_matlab.m                # generated/matlab-trajectories/M1..M4.csv
