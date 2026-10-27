@@ -84,7 +84,7 @@ byte for byte.
 
 ## Parameter values
 
-The values are those of Table 2 of the paper: Arino et al. 2007 (Mathematical Biosciences 206:46-60),
+The values are those of the parameter table of the paper (Section 5.2): Arino et al. 2007 (Mathematical Biosciences 206:46-60),
 Section 5, with the transmission rate raised to beta_BB = 0.5 (their 0.24 gives R0 = 1.02 and no epidemic);
 the isolation rate delta = 0.2 per day from Martcheva 2015 (Table 9.5) and the release rate epsilon = 1 per
 day by convention. Fifteen zones on a one-way ring, 5000 humans and 50000 birds per zone, 100 infectious
