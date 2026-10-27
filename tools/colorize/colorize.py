@@ -11,7 +11,8 @@ to. Everything else (entity names, N, t, punctuation) is black.
 
 Usage:
     colorize.py kendrick "kendrick models/Model3.st" out.html [columns]
-    colorize.py matlab "matlab models/M3" out.html [columns]   (concatenates the four .m files)
+    colorize.py matlab "matlab models/M3" out.html [columns] [files...]
+        (concatenates the four .m files, or the files named after the column count, in that order)
 
 The HTML is printed to PDF with a headless browser (see make-figures.sh).
 """
@@ -167,14 +168,18 @@ def colorize_matlab(text):
     return out
 
 
-def page(lines, title, columns=1):
-    """One HTML page; with columns > 1 the numbered lines are laid out in side-by-side columns."""
-    per = -(-len(lines) // columns)
+def page(lines, title, columns=1, breaks=None):
+    """One HTML page; with columns > 1 the numbered lines are laid out in side-by-side columns, split evenly,
+    or at the line indices of `breaks` (one column per file when each file has its own column)."""
+    if breaks is None:
+        per = -(-len(lines) // columns)
+        breaks = [c * per for c in range(columns)]
+    bounds = list(breaks) + [len(lines)]
     cols = []
-    for c in range(columns):
-        chunk = lines[c * per:(c + 1) * per]
+    for c in range(len(breaks)):
+        start, end = bounds[c], bounds[c + 1]
         cols.append('<div class="col">' + "\n".join(
-            f'<div class="l"><span class="n">{c * per + i + 1}</span>{l if l else "&nbsp;"}</div>' for i, l in enumerate(chunk)) + '</div>')
+            f'<div class="l"><span class="n">{start + i + 1}</span>{l if l else "&nbsp;"}</div>' for i, l in enumerate(lines[start:end])) + '</div>')
     body = '<div class="cols">' + "\n".join(cols) + '</div>'
     legend = " ".join(f'<span style="background:{COLORS[c]}">&nbsp;{c}&nbsp;</span>' for c in ["SEIRS", "MultiSpecies", "MetaPopulation"])
     return f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>{title}</title>
@@ -198,10 +203,16 @@ def main():
         title = "Kendrick"
     else:
         text = ""
-        for f in ["SEIRSInfluenza.m", "resolve.m", "visualization.m", "modelODEs.m"]:
+        files = sys.argv[5:] or ["SEIRSInfluenza.m", "resolve.m", "visualization.m", "modelODEs.m"]
+        starts = []
+        for f in files:
+            starts.append(text.count("\n"))
             text += f"% ---- {f}\n" + (src / f).read_text(encoding="utf-8").replace("\r\n", "\n").rstrip("\n") + "\n"
         lines = colorize_matlab(text)
         title = "MATLAB"
+        if columns == len(files):  # one file per column
+            dst.write_text(page(lines, title, columns, starts), encoding="utf-8")
+            return
     dst.write_text(page(lines, title, columns), encoding="utf-8")
 
 
