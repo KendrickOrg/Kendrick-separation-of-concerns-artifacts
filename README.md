@@ -14,6 +14,10 @@ release; the record lists every release with its own DOI.
 - `kendrick models/`: the four Kendrick models of the paper, `Model1.st` to `Model4.st` (SEIRS; plus two
   species; plus fifteen zones on a one-way ring; plus isolation of the infectious), in the syntax of
   Section 4, described in `SYNTAX.md`. `M1a.kendrick` is the SIR example of the Kendrick wiki, in the same syntax.
+  `Model3-20zones.st` and `Model3-3species.st` are the two modification steps of Model 3 (Section 5.5: 20 zones
+  instead of 15; a third species with placeholder values); `matlab models/M3-20zones` and `M3-3species` are their
+  MATLAB counterparts. `metrics.py` measures the steps (`generated/modification-effort.tex`, key `modifications` of
+  `metrics.json`); `tools/compare/check_modification_steps.m` runs the MATLAB variants under Octave.
 - `matlab models/M1` to `M4`: the same four models written by hand in MATLAB, four files each (main
   script `SEIRSInfluenza.m`, `modelODEs.m`, `resolve.m`, `visualization.m`). They run under GNU Octave.
   `M4` is the corrected version of Section 4.5 (the ODE function recomputes `N` from the current compartments).
@@ -66,6 +70,7 @@ colorized figures only. On Windows, Octave and Julia are not put on the PATH by 
     for k in 1 2 3 4; do java -cp ../JKendrick/target/jkendrick.jar jKendrick.Kendrick "kendrick models/Model$k.st" --csv generated/kendrick-trajectories/Model$k.csv; done
     octave-cli tools/compare/dump_matlab.m                # generated/matlab-trajectories/M1..M4.csv
     octave-cli tools/compare/check_single_file.m          # Model 4 in one file against M4 (Section 6.2)
+    octave-cli tools/compare/check_modification_steps.m   # the two modification steps of Model 3 run (Section 5.5)
     python tools/compare/compare.py                       # generated/trajectory-comparison.json (Section 4.5)
     python tools/compare/refine.py                        # generated/trajectory-comparison-refined.json (Section 4.5)
     julia --project="algebraicpetri models" -e "using Pkg; Pkg.instantiate()"   # once

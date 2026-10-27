@@ -12,6 +12,7 @@ reads  kendrick models/Model1..4.st  and  matlab models/M1..M4/*.m  and writes
     generated/scattering.tex          Table: trace of each concern of Model 4 (statements, chunks, entities)
     generated/metrics.json            every number, for the text
     generated/attribution-sensitivity.tex  Table: the MATLAB traces of Model 4 with and without the dimensions and index variables
+    generated/modification-effort.tex  Table: effort of the two modification steps of Model 3 (20 zones, a third species)
     figures/dependency-graph.pdf      Figure: dependency graphs of Model 4 (MATLAB and Kendrick)
 
 Conventions (stated in the paper):
@@ -31,7 +32,7 @@ Conventions (stated in the paper):
 * The trace of a concern is the set of statements mentioning one of its names (attributed as in
   the colorized figure); its chunks are the maximal runs of consecutive statements of the trace,
   and it spans the entities that contain at least one of them. A statement mentioning several
-  concerns is where they are intertwined.
+  concerns is where they are tangled.
 * Evolution scenario Sn goes from Model n to Model n+1. Entities are matched by name: an entity
   of the new model is *reused* if its text is unchanged (up to whitespace), *changed* if it
   exists in the old model with another text, *added* otherwise. Within a changed entity the
@@ -133,6 +134,18 @@ def matlab_functions(path):
 def load(n):
     k = kendrick_entities((KDIR / f"Model{n}.st").read_text(encoding="utf-8"))
     m = matlab_entities(MDIR / f"M{n}")
+    return k, m
+
+
+# The two modification steps of Model 3 (Section 5.5): the number of zones and the number of species change,
+# no concern is added. label -> (Kendrick script, MATLAB folder)
+MODIFICATIONS = {"Z": ("Model3-20zones.st", "M3-20zones"), "P": ("Model3-3species.st", "M3-3species")}
+
+
+def load_modification(label):
+    kfile, mdir = MODIFICATIONS[label]
+    k = kendrick_entities((KDIR / kfile).read_text(encoding="utf-8"))
+    m = matlab_entities(MDIR / mdir)
     return k, m
 
 
@@ -370,7 +383,7 @@ def tex_sensitivity(mt, mt_without):
         a, b = mt["concerns"][c], mt_without["concerns"][c]
         out.append(f"{c} & {a['statements']} & {a['share']} & {a['chunks']} & {b['statements']} & {b['share']} & {b['chunks']} \\\\")
     out.append(r"\hline")
-    out.append(r"Intertwined statements (\%%) & \multicolumn{3}{c|}{%s} & \multicolumn{3}{c|}{%s} \\"
+    out.append(r"Tangled statements (\%%) & \multicolumn{3}{c|}{%s} & \multicolumn{3}{c|}{%s} \\"
                % (mt["mixed_share"], mt_without["mixed_share"]))
     out.append(r"\hline")
     out.append(r"\end{tabular}")
@@ -425,6 +438,24 @@ def tex_size(sizes):
             first = r"\multirow{2}{*}{M%d}" % n if lang == "M" else ""
             out.append(f"{first} & {lang} & {s['loc']} & {s['chars']} & {s['avg']} & {s['entities']} \\\\")
             out.append(r"\cmidrule{2-6}" if lang == "M" else r"\hline")
+    out.append(r"\end{tabular}")
+    return "\n".join(out) + "\n"
+
+
+def tex_modification_effort(efforts):
+    """The table of the modification steps, with the columns of the change-effort table."""
+    out = [r"\begin{tabular}{|c|rr|rr|rr|rr|rr|rr|}", r"\cmidrule{2-13}",
+           r"\multicolumn{1}{c|}{} & \multicolumn{2}{c|}{Changed} & \multicolumn{2}{c|}{Added} & \multicolumn{2}{c|}{Reused} & \multicolumn{2}{c|}{Changed} & \multicolumn{2}{c|}{Added} & \multicolumn{2}{c|}{Deleted} \\",
+           r"\multicolumn{1}{c|}{} & \multicolumn{2}{c|}{entities} & \multicolumn{2}{c|}{entities} & \multicolumn{2}{c|}{entities} & \multicolumn{2}{c|}{statements} & \multicolumn{2}{c|}{statements} & \multicolumn{2}{c|}{statements} \\",
+           r"\cmidrule{2-13}",
+           r"\multicolumn{1}{c|}{} & M & K & M & K & M & K & M & K & M & K & M & K \\", r"\hline"]
+    for label, e in efforts.items():
+        m, k = e["matlab"], e["kendrick"]
+        cells = []
+        for key in ("changed_entities", "added_entities", "reused_entities", "changed_lines", "added_lines", "deleted_lines"):
+            cells += [str(m[key]), str(k[key])]
+        out.append(label + " & " + " & ".join(cells) + r" \\")
+        out.append(r"\hline")
     out.append(r"\end{tabular}")
     return "\n".join(out) + "\n"
 
@@ -543,6 +574,13 @@ def main():
         k0, m0 = models[n]
         k1, m1 = models[n + 1]
         efforts[n] = {"kendrick": effort(k0, k1), "matlab": effort(m0, m1)}
+    # the modification steps of Model 3: Z, 20 zones instead of 15; P, a third species
+    k3, m3 = models[3]
+    modifications = {}
+    for label in MODIFICATIONS:
+        k1, m1 = load_modification(label)
+        modifications[label] = {"kendrick": effort(k3, k1), "matlab": effort(m3, m1)}
+    (OUT / "modification-effort.tex").write_text(tex_modification_effort(modifications), encoding="utf-8")
     k4, m4 = models[4]
     kdecl, kdeps = kendrick_dependencies(k4)
     mdeps = matlab_dependencies(m4)
@@ -574,7 +612,7 @@ def main():
     (OUT / "dependency-metrics.tex").write_text(tex_dependencies(kc, mc), encoding="utf-8")
     draw(kdeps, knodes, mdeps, mnodes, ROOT / "figures" / "dependency-graph.pdf")
     result = {
-        "sizes": sizes, "efforts": efforts,
+        "sizes": sizes, "efforts": efforts, "modifications": modifications,
         "kendrick": {"declarations": {e: sorted(s) for e, s in kdecl.items()},
                      "dependencies": {f"{a} -> {b}": v for (a, b), v in sorted(kdeps.items())}, "coupling": kc},
         "matlab": {"dependencies": {f"{a} -> {b}": v for (a, b), v in sorted(mdeps.items())}, "coupling": mc},

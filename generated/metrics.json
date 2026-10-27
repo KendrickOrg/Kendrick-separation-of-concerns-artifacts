@@ -179,6 +179,86 @@
    }
   }
  },
+ "modifications": {
+  "Z": {
+   "kendrick": {
+    "changed_entities": 2,
+    "added_entities": 0,
+    "reused_entities": 5,
+    "changed_lines": 2,
+    "added_lines": 0,
+    "deleted_lines": 0,
+    "changed": [
+     "MetaPopulation",
+     "Scr1"
+    ],
+    "added": [],
+    "reused": [
+     "SEIRS",
+     "MultiSpecies",
+     "Influenza",
+     "InfluenzaSim",
+     "InfluenzaViz"
+    ]
+   },
+   "matlab": {
+    "changed_entities": 1,
+    "added_entities": 0,
+    "reused_entities": 3,
+    "changed_lines": 1,
+    "added_lines": 0,
+    "deleted_lines": 0,
+    "changed": [
+     "SEIRSInfluenza.m"
+    ],
+    "added": [],
+    "reused": [
+     "modelODEs.m",
+     "resolve.m",
+     "visualization.m"
+    ]
+   }
+  },
+  "P": {
+   "kendrick": {
+    "changed_entities": 2,
+    "added_entities": 0,
+    "reused_entities": 5,
+    "changed_lines": 7,
+    "added_lines": 0,
+    "deleted_lines": 0,
+    "changed": [
+     "MultiSpecies",
+     "Scr1"
+    ],
+    "added": [],
+    "reused": [
+     "SEIRS",
+     "MetaPopulation",
+     "Influenza",
+     "InfluenzaSim",
+     "InfluenzaViz"
+    ]
+   },
+   "matlab": {
+    "changed_entities": 1,
+    "added_entities": 0,
+    "reused_entities": 3,
+    "changed_lines": 7,
+    "added_lines": 0,
+    "deleted_lines": 0,
+    "changed": [
+     "SEIRSInfluenza.m"
+    ],
+    "added": [],
+    "reused": [
+     "modelODEs.m",
+     "resolve.m",
+     "visualization.m"
+    ]
+   }
+  }
+ },
  "kendrick": {
   "declarations": {
    "SEIRS": [

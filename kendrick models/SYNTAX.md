@@ -8,7 +8,7 @@ implementation and the wiki still use the older spelling (`KendrickModel`, `attr
 ## Entities
 
     KModel <name> <clause>; ... <clause>.
-    Composition <name> model: '<KModel name>'; ... .
+    Composition <name> model: '<KModel name>'; model: '<KModel name>' renaming: #((<old> <new>) ...); ... .
     Scenario <name> on: '<Composition name>'; <assignment>; ... .
     Simulation <name> solver: '<solver>'; scenario: '<Scenario name>'; from: <t0>; to: <t1>; step: <dt>.
     Visualization <name> plot: '<kind>'; for: '<Simulation name>'; ... .
