@@ -1,0 +1,169 @@
+{
+  "model": "Model4",
+  "ode": {
+    "day": 1500.0,
+    "infectious_humans_per_zone_peak": [
+      2.9081438430382525,
+      3.094028967950471
+    ],
+    "infectious_humans_per_zone_on_day": [
+      0.5334417609626149,
+      0.5334447039417924
+    ],
+    "infectious_birds_on_day": 1503.9975268641333,
+    "zones_with_infectious_birds": 15,
+    "infectious_birds_smallest_zone": 100.26646896458817
+  },
+  "tau_leaping": [
+    {
+      "seed": 1,
+      "day": 1500.0,
+      "infectious_humans_per_zone_peak": [
+        5.0,
+        11.0
+      ],
+      "infectious_humans_per_zone_on_day": [
+        0.0,
+        2.0
+      ],
+      "infectious_birds_on_day": 1748.0,
+      "zones_with_infectious_birds": 15,
+      "infectious_birds_smallest_zone": 47.0
+    },
+    {
+      "seed": 2,
+      "day": 1500.0,
+      "infectious_humans_per_zone_peak": [
+        6.0,
+        12.0
+      ],
+      "infectious_humans_per_zone_on_day": [
+        0.0,
+        2.0
+      ],
+      "infectious_birds_on_day": 1173.0,
+      "zones_with_infectious_birds": 15,
+      "infectious_birds_smallest_zone": 34.0
+    },
+    {
+      "seed": 3,
+      "day": 1500.0,
+      "infectious_humans_per_zone_peak": [
+        6.0,
+        11.0
+      ],
+      "infectious_humans_per_zone_on_day": [
+        0.0,
+        3.0
+      ],
+      "infectious_birds_on_day": 1894.0,
+      "zones_with_infectious_birds": 15,
+      "infectious_birds_smallest_zone": 68.0
+    },
+    {
+      "seed": 4,
+      "day": 1500.0,
+      "infectious_humans_per_zone_peak": [
+        5.0,
+        9.0
+      ],
+      "infectious_humans_per_zone_on_day": [
+        0.0,
+        1.0
+      ],
+      "infectious_birds_on_day": 1314.0,
+      "zones_with_infectious_birds": 15,
+      "infectious_birds_smallest_zone": 59.0
+    },
+    {
+      "seed": 5,
+      "day": 1500.0,
+      "infectious_humans_per_zone_peak": [
+        6.0,
+        11.0
+      ],
+      "infectious_humans_per_zone_on_day": [
+        0.0,
+        1.0
+      ],
+      "infectious_birds_on_day": 1049.0,
+      "zones_with_infectious_birds": 15,
+      "infectious_birds_smallest_zone": 22.0
+    },
+    {
+      "seed": 6,
+      "day": 1500.0,
+      "infectious_humans_per_zone_peak": [
+        5.0,
+        9.0
+      ],
+      "infectious_humans_per_zone_on_day": [
+        0.0,
+        2.0
+      ],
+      "infectious_birds_on_day": 2319.0,
+      "zones_with_infectious_birds": 15,
+      "infectious_birds_smallest_zone": 95.0
+    },
+    {
+      "seed": 7,
+      "day": 1500.0,
+      "infectious_humans_per_zone_peak": [
+        5.0,
+        12.0
+      ],
+      "infectious_humans_per_zone_on_day": [
+        0.0,
+        4.0
+      ],
+      "infectious_birds_on_day": 1160.0,
+      "zones_with_infectious_birds": 15,
+      "infectious_birds_smallest_zone": 27.0
+    },
+    {
+      "seed": 8,
+      "day": 1500.0,
+      "infectious_humans_per_zone_peak": [
+        6.0,
+        11.0
+      ],
+      "infectious_humans_per_zone_on_day": [
+        0.0,
+        2.0
+      ],
+      "infectious_birds_on_day": 1241.0,
+      "zones_with_infectious_birds": 15,
+      "infectious_birds_smallest_zone": 39.0
+    },
+    {
+      "seed": 9,
+      "day": 1500.0,
+      "infectious_humans_per_zone_peak": [
+        6.0,
+        11.0
+      ],
+      "infectious_humans_per_zone_on_day": [
+        0.0,
+        2.0
+      ],
+      "infectious_birds_on_day": 836.0,
+      "zones_with_infectious_birds": 15,
+      "infectious_birds_smallest_zone": 14.0
+    },
+    {
+      "seed": 10,
+      "day": 1500.0,
+      "infectious_humans_per_zone_peak": [
+        6.0,
+        10.0
+      ],
+      "infectious_humans_per_zone_on_day": [
+        0.0,
+        2.0
+      ],
+      "infectious_birds_on_day": 1834.0,
+      "zones_with_infectious_birds": 15,
+      "infectious_birds_smallest_zone": 73.0
+    }
+  ]
+}

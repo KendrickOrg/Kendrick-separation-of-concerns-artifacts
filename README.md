@@ -48,11 +48,15 @@ release; the record lists every release with its own DOI.
   `generated/matlab-trajectories/octave-version.txt`, which `compare.py` copies into its output.
   `check_single_file.m` runs `matlab models/M4-single-file/Model_4.m` and compares its state at day 1500 with
   that of `M4` (maximum relative difference 4.4e-12).
+- `tools/stochastic/model4_tauleap.py`: runs Model 4 once with its own solver and ten times by tau-leaping
+  (seeds 1 to 10, one run each) and writes `generated/model4-tauleap.json`: per run, the infectious humans
+  per zone (peak and day 1500) and the infectious birds on day 1500 (in all, zones where they persist,
+  smallest zone), the stochastic reading of Section 5.2.
 - `generated/`: the outputs. The tables of Section 5 (`scattering.tex`, `scattering3.tex`, `size-metrics.tex`,
   `dependency-metrics.tex`, `change-effort.tex`), `metrics.json` (every number, with the attribution of each
-  statement), `trajectory-comparison.json`, and the trajectories of every model in every language
-  (`kendrick-trajectories/`, `matlab-trajectories/`, `algebraicpetri-trajectories/`, one CSV per model, one
-  column per compartment, one row per day). The trajectories are included so that the comparisons can be
+  statement), `trajectory-comparison.json`, `model4-tauleap.json`, and the trajectories of every model in
+  every language (`kendrick-trajectories/`, `matlab-trajectories/`, `algebraicpetri-trajectories/`, one CSV
+  per model, one column per compartment, one row per day). The trajectories are included so that the comparisons can be
   checked without Octave or Julia; the commands below regenerate them.
 - `figures/`: the three generated figures of the paper (`Mcolorized.pdf` and `Kcolorized.pdf`, the colorized
   Model 3 in MATLAB and Kendrick; `dependency-graph.pdf`, the dependency graphs of Model 4).
@@ -78,6 +82,7 @@ colorized figures only. On Windows, Octave and Julia are not put on the PATH by 
     julia --project="algebraicpetri models" "algebraicpetri models/model4/model4.jl"   # generated/algebraicpetri-trajectories/Model4.csv
     python tools/compare/compare_algebraicpetri.py        # Model 3 (Section 5.3); add 4 for Model 4 (Section 5.5.3)
     bash tools/colorize/make-figures.sh                   # figures/Mcolorized.pdf and Kcolorized.pdf
+    python tools/stochastic/model4_tauleap.py             # generated/model4-tauleap.json (Section 5.2)
 
 Running `metrics.py` on this repository reproduces the committed `generated/*.tex` and `metrics.json`
 byte for byte.
